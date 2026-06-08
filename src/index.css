@@ -241,7 +241,7 @@ a {
   justify-content: center;
   padding: 140px 0 80px 0;
   box-sizing: border-box;
-  background-image: linear-gradient(rgba(22, 24, 22, 0.55), rgba(22, 24, 22, 0.55)), 
+  background-image: linear-gradient(rgba(18, 20, 18, 0.68), rgba(18, 20, 18, 0.68)), 
                     url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/5_h_startseite-1-8be265VEZDfuXnui.jpg');
   background-size: cover;
   background-position: center;
@@ -325,6 +325,7 @@ a {
   color: var(--eb-text-white);
   letter-spacing: -0.01em;
   text-align: center;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.75), 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .headline .highlight {
@@ -332,7 +333,7 @@ a {
   font-family: 'Lora', serif;
   font-style: italic;
   font-weight: 400; 
-  text-shadow: 0 0 20px rgba(133, 163, 31, 0.45);
+  text-shadow: 0 0 20px rgba(133, 163, 31, 0.45), 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Verhindert das Trennen von zusammengehörigen Wörtern */
@@ -348,6 +349,7 @@ a {
   font-weight: 300;
   text-align: center;
   max-width: 700px;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
 }
 
 /* === CALL TO ACTION & DROPDOWN === */
@@ -2103,7 +2105,7 @@ a {
   stroke-linejoin: round;
 }
 
-.list-text {
+.portal-section .list-text {
   font-size: 1.1rem;
   line-height: 1.5;
   color: #ffffff; /* Weiß für dunklen Hintergrund */
@@ -2317,7 +2319,8 @@ a {
 }
 
 @media (max-width: 480px) {
-  .list-text {
+  .portal-section .list-text,
+  .memorial-list .list-text {
     font-size: 1rem;
   }
 }
@@ -2478,7 +2481,7 @@ a {
   stroke-linejoin: round;
 }
 
-.list-text {
+.memorial-list .list-text {
   font-size: 1rem;
   color: var(--eb-text-dark);
   font-weight: 500;
