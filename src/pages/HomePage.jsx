@@ -48,32 +48,22 @@ const HomePage = () => {
       
       {/* 1. HERO SECTION */}
       <section className="hero-modern">
-        {/* Background Video */}
-        <div className="hero-video-overlay"></div>
-        <video 
-          className="hero-video-bg" 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-        >
-          <source 
-            src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/website-datein/Eberhardt%20Bestattung/elementbau_Clip.mp4" 
-            type="video/mp4" 
-          />
-          {/* Fallback to Pexels original source if R2 is not uploaded yet */}
-          <source 
-            src="https://videos.pexels.com/video-files/12417948/12417948-hd_1920_1080_24fps.mp4" 
-            type="video/mp4" 
-          />
-        </video>
-
         <div className="container hero-container">
+          {/* Left Column: Image Card */}
+          <div className="hero-image-col">
+            <img 
+              src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/website-datein/Eberhardt%20Bestattung/herobild.jpg" 
+              alt="Mohnfeld im Sonnenuntergang" 
+              className="hero-img-card"
+            />
+          </div>
+
+          {/* Right Column: Content */}
           <motion.div 
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="hero-content"
+            className="hero-content-col"
           >
             <div className="modern-badge">
               <div className="badge-dot"></div>
@@ -82,7 +72,7 @@ const HomePage = () => {
             
             <h1 className="headline">
               Wir sind für <span className="nowrap">Sie da,</span><br className="hide-mobile" />
-              wenn die Zeit des <span class="highlight">Erinnerns</span> beginnt.
+              wenn die Zeit des <span className="highlight">Erinnerns</span> beginnt.
             </h1>
             
             <p className="description">
@@ -553,7 +543,7 @@ const HomePage = () => {
                 playsInline
               >
                 <source 
-                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/website-datein/Eberhardt%20Bestattung/gedenkportal_video.mp4" 
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/website-datein/Eberhardt%20Bestattung/kerze.mp4" 
                   type="video/mp4" 
                 />
                 {/* Fallback to original m3u8 player or pexels candle loop if needed */}
