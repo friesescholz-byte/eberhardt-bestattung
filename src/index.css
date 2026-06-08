@@ -246,6 +246,7 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Ein ganz zarter, grüner Hintergrund-Glow */
@@ -791,6 +792,7 @@ a {
   .hero-modern {
     padding: 120px 5% 60px 5%;
     min-height: 100vh;
+    background-attachment: scroll;
   }
   .hide-mobile {
     display: none; /* Deaktiviert starre Umbrüche auf dem Handy */
