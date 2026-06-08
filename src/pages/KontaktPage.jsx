@@ -121,7 +121,7 @@ const KontaktPage = () => {
   };
 
   return (
-    <div className="kontakt-page-wrapper section-padding">
+    <div className="kontakt-page-wrapper section-padding section-dark-textured">
       <div className="container">
         
         {/* Header */}

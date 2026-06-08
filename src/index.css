@@ -235,12 +235,17 @@ a {
 .hero-modern {
   position: relative;
   width: 100%;
-  min-height: 95vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 140px 0 80px 0;
   box-sizing: border-box;
-  background-color: var(--eb-dark-bg);
+  background-image: linear-gradient(rgba(22, 24, 22, 0.55), rgba(22, 24, 22, 0.55)), 
+                    url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/5_h_startseite-1-8be265VEZDfuXnui.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Ein ganz zarter, grüner Hintergrund-Glow */
@@ -252,44 +257,29 @@ a {
   transform: translate(-50%, -50%);
   width: 80vw;
   height: 80vh;
-  background: radial-gradient(circle, rgba(133, 163, 31, 0.08) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(133, 163, 31, 0.12) 0%, transparent 60%);
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
 .hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 70px;
-  align-items: center;
-}
-
-.hero-image-col {
-  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-}
-
-.hero-img-card {
+  justify-content: center;
+  text-align: center;
   width: 100%;
-  max-width: 540px;
-  height: 480px;
-  object-fit: cover;
-  border-radius: 20px;
-  border: 1px solid var(--eb-border-dark);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-.hero-content-col {
+.hero-content {
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  animation: fadeUp 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-  opacity: 0;
-  transform: translateY(30px);
+  align-items: center;
+  text-align: center;
+  max-width: 850px;
+  width: 100%;
 }
 
 @keyframes fadeUp {
@@ -327,21 +317,21 @@ a {
 /* --- DIE NEUE HAUPTÜBERSCHRIFT --- */
 .headline {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
   font-weight: 400;
   line-height: 1.25;
   margin: 0 0 25px 0;
-  color: var(--eb-text);
-  letter-spacing: -0.02em;
-  text-align: left;
+  color: var(--eb-text-white);
+  letter-spacing: -0.01em;
+  text-align: center;
 }
 
 .headline .highlight {
-  color: var(--eb-green); 
+  color: var(--eb-green-light); 
   font-family: 'Lora', serif;
   font-style: italic;
   font-weight: 400; 
-  text-shadow: 0 0 20px rgba(133, 163, 31, 0.35);
+  text-shadow: 0 0 20px rgba(133, 163, 31, 0.45);
 }
 
 /* Verhindert das Trennen von zusammengehörigen Wörtern */
@@ -350,19 +340,20 @@ a {
 }
 
 .description {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.7;
   color: var(--eb-text-muted-light);
   margin: 0 0 35px 0;
   font-weight: 300;
-  text-align: left;
+  text-align: center;
+  max-width: 700px;
 }
 
 /* === CALL TO ACTION & DROPDOWN === */
 .cta-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
   width: 100%;
 }
@@ -373,6 +364,7 @@ a {
   color: var(--eb-text-muted-light);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -706,6 +698,90 @@ a {
   width: 20px;
   height: 20px;
   fill: none;
+}
+
+/* Das herausfahrende Menü */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(22, 24, 22, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(140, 168, 58, 0.2);
+  border-radius: 16px;
+  padding: 8px;
+  min-width: 260px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  z-index: 10;
+}
+
+/* Menü wird sichtbar bei Hover oder Klick (Fokus) */
+.dropdown-wrapper:hover .dropdown-content,
+.dropdown-wrapper:focus-within .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(20px);
+}
+
+/* Telefon-Links im Menü */
+.dropdown-content a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--eb-text);
+  padding: 14px 18px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background: rgba(140, 168, 58, 0.15);
+  color: var(--eb-green-light);
+}
+
+.dropdown-content .location {
+  color: var(--eb-text-muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+/* Zweiter Button (Kontaktieren) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #ffffff;
+  color: var(--eb-dark-bg);
+  padding: 18px 40px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+  background-color: #f3f4f6;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  fill: none;
   stroke: currentColor;
   stroke-width: 1.5;
 }
@@ -713,14 +789,14 @@ a {
 /* === RESPONSIVE (MOBILE OPTIMIERUNG) === */
 @media (max-width: 768px) {
   .hero-modern {
-    padding: 50px 5% 20px 5%; /* Weniger Rand oben und unten */
-    min-height: auto; /* Box nicht mehr künstlich in die Länge ziehen */
+    padding: 120px 5% 60px 5%;
+    min-height: 100vh;
   }
   .hide-mobile {
     display: none; /* Deaktiviert starre Umbrüche auf dem Handy */
   }
   .cta-wrapper {
-    padding-bottom: 75px; /* Reduziert den Platz unterm Button deutlich */
+    align-items: center;
   }
   .button-group {
     flex-direction: column;
@@ -1228,9 +1304,10 @@ a {
 
 /* === HAUPTCONTAINER === */
 .services-section-premium {
-  max-width: 1300px;
-  margin: 120px auto; 
-  padding: 0 5%;
+  width: 100%;
+  margin: 0;
+  padding: 100px 0;
+  box-sizing: border-box;
 }
 
 /* === HEADER === */
@@ -1413,7 +1490,8 @@ a {
 
 @media (max-width: 768px) {
   .services-section-premium {
-    margin: 80px auto;
+    margin: 0;
+    padding: 60px 0;
   }
 
   .category-grid {
@@ -1444,9 +1522,10 @@ a {
    ========================================================================== */
 /* === HAUPTCONTAINER === */
 .burial-section {
-  max-width: 1200px;
-  margin: 120px auto; 
-  padding: 0 5%;
+  width: 100%;
+  margin: 0;
+  padding: 100px 0;
+  box-sizing: border-box;
 }
 
 /* === HEADER === */
@@ -1850,7 +1929,8 @@ a {
 
 @media (max-width: 768px) {
   .burial-section {
-    margin: 80px auto;
+    margin: 0;
+    padding: 60px 0;
   }
 
   /* Reduziert den unteren Rand der Outro-Sektion auf Handys */
@@ -1920,9 +2000,10 @@ a {
 
 /* === PORTAL BEREICH === */
 .portal-section {
-  max-width: 1200px;
-  margin: 120px auto; 
-  padding: 0 5%;
+  width: 100%;
+  margin: 0;
+  padding: 100px 0;
+  box-sizing: border-box;
 }
 
 /* === 2-SPALTEN GRID === */
@@ -2166,7 +2247,8 @@ a {
 
 @media (max-width: 768px) {
   .portal-section {
-    margin: 60px auto; /* Reduzierter Abstand nach oben/unten */
+    margin: 0;
+    padding: 60px 0;
   }
 
   .portal-grid {
@@ -2245,9 +2327,10 @@ a {
 
 /* === HAUPTCONTAINER === */
 .memorial-section {
-  max-width: 1200px;
-  margin: 120px auto; 
-  padding: 0 5%;
+  width: 100%;
+  margin: 0;
+  padding: 100px 0;
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -2467,7 +2550,8 @@ a {
 
 @media (max-width: 768px) {
   .memorial-section {
-    margin: 50px auto; 
+    margin: 0;
+    padding: 60px 0;
   }
   
   .memorial-video-wrapper {
@@ -2525,9 +2609,10 @@ a {
 
 /* === VORSORGE BEREICH === */
 .vorsorge-section {
-  max-width: 1300px; /* Etwas breiter für die 4 Säulen */
-  margin: 120px auto; 
-  padding: 0 5%;
+  width: 100%;
+  margin: 0;
+  padding: 100px 0;
+  box-sizing: border-box;
 }
 
 /* === HEADER === */
@@ -2763,8 +2848,6 @@ a {
   margin-right: 56px; /* Gleicht den Platz der Punkte aus */
 }
 
-.app-
-
 .erblotse-iframe {
   width: 100%;
   min-height: 600px; 
@@ -2833,7 +2916,8 @@ a {
 
 @media (max-width: 768px) {
   .vorsorge-section {
-    margin: 80px auto;
+    margin: 0;
+    padding: 60px 0;
   }
 
   .vorsorge-title {
@@ -2873,5 +2957,22 @@ a {
 @media (max-width: 480px) {
   .section-tag::before, .section-tag::after {
     width: 20px;
+  }
+}
+
+/* === SECTION WRAPPER LAYOUT & TEXTURE BACKGROUND === */
+.section-dark-textured {
+  position: relative;
+  background-image: linear-gradient(rgba(22, 24, 22, 0.88), rgba(22, 24, 22, 0.88)), 
+                    url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/hintergrund-schlicht-weia-professionell-fa1-4r-bestattungsunternehmen-und-ein-paar-schatten-eg2uTaWw97xCaNow.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  .section-dark-textured {
+    background-attachment: scroll;
   }
 }

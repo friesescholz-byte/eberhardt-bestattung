@@ -49,7 +49,7 @@ const Navigation = () => {
         {/* Logo */}
         <Link to="/" className="nav-logo">
           <img 
-            src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/website-datein/Eberhardt%20Bestattung/logo.png" 
+            src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/eberhardt-Logo-RGB%20(1).png" 
             alt="Eberhardt Bestattungen Logo" 
             className="logo-img" 
           />

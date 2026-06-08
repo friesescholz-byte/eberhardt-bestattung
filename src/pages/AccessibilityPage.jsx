@@ -2,7 +2,7 @@ import React from 'react';
 
 const AccessibilityPage = () => {
   return (
-    <div className="legal-page-wrapper section-padding">
+    <div className="legal-page-wrapper section-padding section-dark-textured">
       <div className="container legal-container">
         <h1 className="legal-title">Barrierefreiheitserklärung</h1>
         

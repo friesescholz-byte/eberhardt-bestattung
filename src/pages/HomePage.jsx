@@ -49,21 +49,11 @@ const HomePage = () => {
       {/* 1. HERO SECTION */}
       <section className="hero-modern">
         <div className="container hero-container">
-          {/* Left Column: Image Card */}
-          <div className="hero-image-col">
-            <img 
-              src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/website-datein/Eberhardt%20Bestattung/herobild.jpg" 
-              alt="Mohnfeld im Sonnenuntergang" 
-              className="hero-img-card"
-            />
-          </div>
-
-          {/* Right Column: Content */}
           <motion.div 
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="hero-content-col"
+            className="hero-content"
           >
             <div className="modern-badge">
               <div className="badge-dot"></div>
@@ -112,7 +102,7 @@ const HomePage = () => {
       </section>
 
       {/* 2. RATGEBER SECTION (WAS IST ZU TUN?) */}
-      <section className="guide-outer-section" id="ratgeber">
+      <section className="guide-outer-section section-dark-textured" id="ratgeber">
         {/* Background Image Overlay */}
         <div className="section-bg-image-overlay"></div>
         <div className="container">
@@ -242,7 +232,7 @@ const HomePage = () => {
       </section>
 
       {/* 3. LEISTUNGEN SECTION */}
-      <section className="services-section-premium" id="leistungen">
+      <section className="services-section-premium section-dark-textured" id="leistungen">
         <div className="container">
           <motion.div 
             initial="hidden"
@@ -347,7 +337,7 @@ const HomePage = () => {
       </section>
 
       {/* 4. BESTATTUNGSARTEN SECTION */}
-      <section className="burial-section" id="bestattungen">
+      <section className="burial-section section-dark-textured" id="bestattungen">
         <div className="container">
           <motion.div 
             initial="hidden"
@@ -451,7 +441,7 @@ const HomePage = () => {
       </section>
 
       {/* 5. ONLINE-KUNDENCENTER */}
-      <section className="portal-section" id="kundencenter">
+      <section className="portal-section section-dark-textured" id="kundencenter">
         <div className="container">
           <div className="portal-grid">
             {/* Left Column Content */}
@@ -524,7 +514,7 @@ const HomePage = () => {
       </section>
 
       {/* 6. GDENKPORTAL SECTION */}
-      <section className="memorial-section" id="gedenkportal">
+      <section className="memorial-section section-dark-textured" id="gedenkportal">
         <div className="container">
           <div className="memorial-grid">
             {/* Video Box */}
@@ -543,7 +533,7 @@ const HomePage = () => {
                 playsInline
               >
                 <source 
-                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/website-datein/Eberhardt%20Bestattung/kerze.mp4" 
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/kerze%20video.mp4" 
                   type="video/mp4" 
                 />
                 {/* Fallback to original m3u8 player or pexels candle loop if needed */}
@@ -606,7 +596,7 @@ const HomePage = () => {
       </section>
 
       {/* 7. BESTATTUNGSVORSORGE SECTION */}
-      <section className="vorsorge-section" id="bestattungsvorsorge">
+      <section className="vorsorge-section section-dark-textured" id="bestattungsvorsorge">
         <div className="container">
           <motion.div 
             initial="hidden"
