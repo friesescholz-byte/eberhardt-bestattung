@@ -17,7 +17,9 @@ import {
   HelpCircle,
   FileText,
   Clock,
-  Briefcase
+  Briefcase,
+  Monitor,
+  Music
 } from 'lucide-react';
 
 // Framer Motion presets
@@ -467,11 +469,11 @@ const HomePage = () => {
                   <p className="list-text">Trauerdruck abstimmen</p>
                 </li>
                 <li className="list-item">
-                  <div className="list-icon"><Clock size={20} /></div>
+                  <div className="list-icon"><Music size={20} /></div>
                   <p className="list-text">Musik & Ablauf der Trauerfeier planen</p>
                 </li>
                 <li className="list-item">
-                  <div className="list-icon"><Lock size={20} /></div>
+                  <div className="list-icon"><FileText size={20} /></div>
                   <p className="list-text">Versicherungen & Verträge online kündigen</p>
                 </li>
                 <li className="list-item">
@@ -493,7 +495,7 @@ const HomePage = () => {
               className="login-card"
             >
               <div className="login-icon">
-                <Lock size={60} />
+                <Monitor size={60} />
               </div>
               <h3 className="login-title">Kunden-Portal</h3>
               <p className="login-text">
@@ -503,7 +505,7 @@ const HomePage = () => {
                 href="https://mein-kunden.center/login" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="btn-primary-portal"
+                className="btn-primary"
               >
                 Zum Portal anmelden
                 <ArrowRight size={18} className="btn-icon" />

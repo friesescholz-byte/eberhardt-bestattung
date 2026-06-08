@@ -2071,27 +2071,29 @@ a {
   gap: 20px;
 }
 
-.list-item {
+.portal-section .list-item {
   display: flex;
   align-items: center;
   gap: 20px;
   padding: 10px 0;
+  transition: transform 0.25s ease;
+}
+
+.portal-section .list-item:hover {
+  transform: translateX(6px);
 }
 
 /* Zartes, organisches Icon */
-.list-icon {
-  width: 44px;
-  height: 44px;
-  background-color: rgba(133, 163, 31, 0.15); /* Zartgrün */
-  color: var(--eb-green);
-  border-radius: 12px; /* Leicht abgerundetes Viereck statt hartem Kreis */
+.portal-section .list-icon {
+  color: var(--eb-green-light);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-right: 5px;
 }
 
-.list-icon svg {
+.portal-section .list-icon svg {
   width: 22px;
   height: 22px;
   fill: none;
@@ -2141,6 +2143,12 @@ a {
   box-shadow: 0 20px 50px rgba(0,0,0,0.08); /* Sanfter Schatten für Tiefe */
   position: relative;
   overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
 }
 
 /* Dekorativer, sehr zarter Wasserzeichen-Effekt im Hintergrund der Karte */
@@ -2274,18 +2282,16 @@ a {
     margin-bottom: 30px;
   }
 
-  .list-item {
+  .portal-section .list-item {
     gap: 15px;
     padding: 5px 0;
   }
 
-  .list-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
+  .portal-section .list-icon {
+    margin-right: 5px;
   }
 
-  .list-icon svg {
+  .portal-section .list-icon svg {
     width: 20px;
     height: 20px;
   }
@@ -2433,7 +2439,7 @@ a {
   gap: 15px;
 }
 
-.list-item {
+.memorial-list .list-item {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -2444,12 +2450,12 @@ a {
   transition: all 0.3s ease;
 }
 
-.list-item:hover {
+.memorial-list .list-item:hover {
   background: rgba(133, 163, 31, 0.12);
   transform: translateY(-2px);
 }
 
-.list-icon {
+.memorial-list .list-icon {
   width: 30px;
   height: 30px;
   background-color: #ffffff;
@@ -2462,7 +2468,7 @@ a {
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.list-icon svg {
+.memorial-list .list-icon svg {
   width: 16px;
   height: 16px;
   fill: none;
@@ -2977,4 +2983,27 @@ a {
   .section-dark-textured {
     background-attachment: scroll;
   }
+}
+
+/* Extra top padding for the first section to separate it from the Hero */
+.guide-outer-section {
+  width: 100%;
+  margin: 0;
+  padding: 165px 0 100px 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .guide-outer-section {
+    padding: 100px 0 60px 0;
+  }
+}
+
+/* Add interactive slide animation to services/features list items on hover */
+.service-item {
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.service-item:hover {
+  transform: translateX(6px);
 }
