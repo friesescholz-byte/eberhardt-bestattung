@@ -883,6 +883,7 @@ a {
 /* Die hellen, weißen Karten */
 .guide-box {
   background-color: var(--eb-card-bg);
+  color: var(--eb-text-dark);
   border: 1px solid var(--eb-border);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); 
   border-top: 4px solid var(--eb-green); 
@@ -930,7 +931,7 @@ a {
   margin: 0;
 }
 
-.step-content strong.step-text {
+.step-num-title {
   display: block;
   font-weight: 600;
   color: var(--eb-text-dark); 

@@ -29,7 +29,8 @@ const Footer = () => {
                 <Clock className="footer-icon" />
                 <span>
                   <strong>Öffnungszeiten:</strong><br />
-                  Mo. – Fr. 08.00 – 17.00 Uhr
+                  Di. 10.00 – 12.00 Uhr<br />
+                  Do. 16.00 – 18.00 Uhr
                 </span>
               </li>
             </ul>
@@ -57,8 +58,7 @@ const Footer = () => {
                 <Clock className="footer-icon" />
                 <span>
                   <strong>Öffnungszeiten:</strong><br />
-                  Di. 10.00 – 12.00 Uhr<br />
-                  Do. 16.00 – 18.00 Uhr
+                  Mo. – Fr. 08.00 – 17.00 Uhr
                 </span>
               </li>
             </ul>
