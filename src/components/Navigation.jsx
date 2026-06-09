@@ -27,6 +27,7 @@ const Navigation = () => {
 
   const navLinks = [
     { name: 'Startseite', path: '/' },
+    { name: 'Über uns', path: '/ueber-uns' },
     { name: 'Leistungen', path: '/#leistungen' },
     { name: 'Bestattungsarten', path: '/#bestattungen' },
     { name: 'Vorsorge', path: '/#bestattungsvorsorge' },

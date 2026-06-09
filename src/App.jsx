@@ -7,6 +7,7 @@ import KontaktPage from './pages/KontaktPage';
 import ImprintPage from './pages/ImprintPage';
 import PrivacyPage from './pages/PrivacyPage';
 import AccessibilityPage from './pages/AccessibilityPage';
+import AboutPage from './pages/AboutPage';
 
 // Scroll to Top helper on route changes
 const ScrollToTop = () => {
@@ -102,6 +103,7 @@ function App() {
       
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/ueber-uns" element={<AboutPage />} />
         <Route path="/kontakt" element={<KontaktPage />} />
         <Route path="/impressum" element={<ImprintPage />} />
         <Route path="/datenschutz" element={<PrivacyPage />} />
