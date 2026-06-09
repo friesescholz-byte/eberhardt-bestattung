@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, ShieldCheck, Users, Sparkles, UserRound } from 'lucide-react';
 
@@ -78,6 +78,46 @@ const cardVariants = {
       ease: [0.22, 1, 0.36, 1]
     }
   }
+};
+
+const TeamMemberCard = ({ member, cardVariants }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete) {
+      setIsLoaded(true);
+    }
+  }, []);
+
+  return (
+    <motion.div className="team-card" variants={cardVariants}>
+      <div className="image-container">
+        {member.image ? (
+          <>
+            <img 
+              ref={imgRef}
+              src={member.image} 
+              alt={`${member.name} - ${member.role}`} 
+              className={`team-image ${isLoaded ? 'loaded' : ''}`}
+              onLoad={() => setIsLoaded(true)}
+            />
+            <div className="image-overlay"></div>
+          </>
+        ) : (
+          <div className="placeholder-image-container">
+            <UserRound className="placeholder-icon" />
+            <span className="placeholder-text">Bild folgt in Kürze</span>
+          </div>
+        )}
+      </div>
+      <div className="card-content">
+        <div className="member-role">{member.role}</div>
+        <h2 className="member-name">{member.name}</h2>
+        <p className="member-bio">{member.bio}</p>
+      </div>
+    </motion.div>
+  );
 };
 
 const AboutPage = () => {
@@ -163,36 +203,12 @@ const AboutPage = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {teamMembers.map((member, index) => (
-            <motion.div 
+          {teamMembers.map((member) => (
+            <TeamMemberCard 
               key={member.name}
-              className="team-card" 
-              variants={cardVariants}
-            >
-              <div className="image-container">
-                {member.image ? (
-                  <>
-                    <img 
-                      src={member.image} 
-                      alt={`${member.name} - ${member.role}`} 
-                      className="team-image"
-                      loading="lazy"
-                    />
-                    <div className="image-overlay"></div>
-                  </>
-                ) : (
-                  <div className="placeholder-image-container">
-                    <UserRound className="placeholder-icon" />
-                    <span className="placeholder-text">Bild folgt in Kürze</span>
-                  </div>
-                )}
-              </div>
-              <div className="card-content">
-                <div className="member-role">{member.role}</div>
-                <h2 className="member-name">{member.name}</h2>
-                <p className="member-bio">{member.bio}</p>
-              </div>
-            </motion.div>
+              member={member}
+              cardVariants={cardVariants}
+            />
           ))}
         </motion.div>
       </section>
@@ -319,8 +335,6 @@ const AboutPage = () => {
           height: 100%;
           display: flex;
           flex-direction: column;
-          content-visibility: auto;
-          contain-intrinsic-size: 500px;
         }
 
         .team-card:hover {
@@ -341,10 +355,15 @@ const AboutPage = () => {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-          will-change: transform;
+          transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease-out;
+          opacity: 0;
+          will-change: transform, opacity;
           backface-visibility: hidden;
           transform: translate3d(0, 0, 0);
+        }
+
+        .team-image.loaded {
+          opacity: 1;
         }
 
         .team-card:hover .team-image {
