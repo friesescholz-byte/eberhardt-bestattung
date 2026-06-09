@@ -35,7 +35,7 @@ const KontaktPage = () => {
   useEffect(() => {
     if (step === 2 && status !== 'success') {
       const checkTurnstile = setInterval(() => {
-        if (window.turnstile) {
+        if (window.turnstile && turnstileContainerRef.current && !widgetIdRef.current) {
           clearInterval(checkTurnstile);
           renderWidget();
         }
@@ -59,6 +59,9 @@ const KontaktPage = () => {
     if (!turnstileContainerRef.current) return;
     
     try {
+      // Clear container to prevent duplicate renders in StrictMode
+      turnstileContainerRef.current.innerHTML = "";
+      
       // Local dev & production key (localhost is whitelisted in this sitekey)
       const sitekey = '0x4AAAAAADg25ekk5m-1SFaq'; 
       
