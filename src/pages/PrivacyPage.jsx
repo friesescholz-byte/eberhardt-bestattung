@@ -39,8 +39,8 @@ const PrivacyPage = () => {
           <p>Unsere Website wird bei folgendem Anbieter gehostet:</p>
           <p style={{ margin: '10px 0' }}>
             <strong>Scholz &amp; Friese Webdesign</strong><br />
-            Auf dem Kampe 6a<br />
-            31582 Nienburg (Weser)<br />
+            Erichshagener Lendenberg 21<br />
+            31582 Nienburg<br />
             Deutschland
           </p>
           <p>
