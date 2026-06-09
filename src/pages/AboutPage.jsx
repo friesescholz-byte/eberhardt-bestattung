@@ -95,6 +95,7 @@ const TeamMemberCard = ({ member, cardVariants }) => {
       <div className="image-container">
         {member.image ? (
           <>
+            {!isLoaded && <div className="shimmer-placeholder"></div>}
             <img 
               ref={imgRef}
               src={member.image} 
@@ -121,6 +122,16 @@ const TeamMemberCard = ({ member, cardVariants }) => {
 };
 
 const AboutPage = () => {
+  // Preload all team images on mount
+  useEffect(() => {
+    teamMembers.forEach(member => {
+      if (member.image) {
+        const img = new Image();
+        img.src = member.image;
+      }
+    });
+  }, []);
+
   return (
     <div className="about-page-wrapper section-dark-textured">
       {/* Intro Header Section */}
@@ -351,6 +362,27 @@ const AboutPage = () => {
           background-color: rgba(255, 255, 255, 0.02);
         }
 
+        @keyframes shimmer {
+          0% {
+            background-position: -200% 0;
+          }
+          100% {
+            background-position: 200% 0;
+          }
+        }
+
+        .shimmer-placeholder {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, #1c1f1c 25%, #252825 50%, #1c1f1c 75%);
+          background-size: 200% 100%;
+          animation: shimmer 1.6s infinite linear;
+          z-index: 1;
+        }
+
         .team-image {
           width: 100%;
           height: 100%;
@@ -360,6 +392,8 @@ const AboutPage = () => {
           will-change: transform, opacity;
           backface-visibility: hidden;
           transform: translate3d(0, 0, 0);
+          z-index: 2;
+          position: relative;
         }
 
         .team-image.loaded {
