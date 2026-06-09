@@ -246,7 +246,7 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 /* Ein ganz zarter, grüner Hintergrund-Glow */
@@ -2980,7 +2980,7 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 @media (max-width: 768px) {

@@ -319,6 +319,8 @@ const AboutPage = () => {
           height: 100%;
           display: flex;
           flex-direction: column;
+          content-visibility: auto;
+          contain-intrinsic-size: 500px;
         }
 
         .team-card:hover {
@@ -340,10 +342,13 @@ const AboutPage = () => {
           height: 100%;
           object-fit: cover;
           transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+          will-change: transform;
+          backface-visibility: hidden;
+          transform: translate3d(0, 0, 0);
         }
 
         .team-card:hover .team-image {
-          transform: scale(1.05);
+          transform: scale(1.05) translate3d(0, 0, 0);
         }
 
         .image-overlay {
