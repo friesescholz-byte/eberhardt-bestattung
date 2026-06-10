@@ -162,7 +162,7 @@ const AboutPage = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="about-intro-text"
         >
-          Ein Bestattungshaus ist nur so stark wie die Menschen, die hinter ihm stehen. Als Familienunternehmen in zweiter Generation stehen wir Ihnen bei jedem Schritt des Abschiednehmens mit Herz, Verlässlichkeit und langjähriger Erfahrung zur Seite. Wir fangen Sie im Trauerfall auf und begleiten Sie kompetent und respektvoll.
+          Ein Bestattungshaus ist nur so stark wie die Menschen, die hinter ihm stehen. Als Familienunternehmen in dritter Generation stehen wir Ihnen bei jedem Schritt des Abschiednehmens mit Herz, Verlässlichkeit und langjähriger Erfahrung zur Seite. Wir fangen Sie im Trauerfall auf und begleiten Sie kompetent und respektvoll.
         </motion.p>
       </section>
 
