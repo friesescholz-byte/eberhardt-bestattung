@@ -1581,7 +1581,123 @@ a {
 }
 
 /* ==========================================================================
-   4. UNSERE STANDORTE SECTION
+   4. ÜBER DAS TEAM (HOME PREVIEW) SECTION
+   ========================================================================== */
+.team-preview-section {
+  padding: 110px 0;
+  position: relative;
+}
+
+.team-preview-header {
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+}
+
+.team-preview-intro {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--eb-text-muted-light);
+  font-weight: 300;
+  margin-top: 20px;
+}
+
+.home-team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.home-team-card {
+  background-color: var(--eb-dark-card);
+  border: 1px solid var(--eb-border-dark);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.home-team-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--eb-green-light);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+.home-team-media {
+  width: 100%;
+  aspect-ratio: 4 / 4.8;
+  overflow: hidden;
+  background-color: #121412;
+}
+
+.home-team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-team-card:hover .home-team-img {
+  transform: scale(1.05);
+}
+
+.home-team-body {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.home-team-role {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--eb-green-light);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.home-team-name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--eb-text-white);
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.home-team-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--eb-text-muted-light);
+  font-weight: 300;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .home-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-preview-section {
+    padding: 60px 0;
+  }
+  .home-team-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .home-team-body {
+    padding: 20px 16px;
+  }
+}
+
+/* ==========================================================================
+   5. UNSERE STANDORTE SECTION
    ========================================================================== */
 .standorte-section {
   padding: 120px 0;

@@ -29,15 +29,15 @@ const Navigation = () => {
     { name: 'Startseite', path: '/' },
     { name: 'Über uns', path: '/ueber-uns' },
     { name: 'Leistungen', path: '/#leistungen' },
-    { name: 'Standorte', path: '/#standorte' },
     { name: 'Bestattungsarten', path: '/#bestattungen' },
     { name: 'Vorsorge', path: '/#bestattungsvorsorge' },
+    { name: 'Standorte', path: '/ueber-uns#standorte' },
     { name: 'Kontakt', path: '/kontakt' }
   ];
 
   const handleLinkClick = (path) => {
-    if (path.startsWith('/#')) {
-      const id = path.substring(2);
+    if (path.includes('#')) {
+      const id = path.split('#')[1];
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -69,6 +69,15 @@ const Navigation = () => {
               >
                 {link.name}
               </a>
+            ) : link.path.includes('#') ? (
+              <Link 
+                key={link.name} 
+                to={link.path}
+                onClick={() => handleLinkClick(link.path)}
+                className={`nav-link ${location.pathname + location.hash === link.path ? 'active' : ''}`}
+              >
+                {link.name}
+              </Link>
             ) : (
               <Link 
                 key={link.name} 
@@ -137,6 +146,18 @@ const Navigation = () => {
                   >
                     {link.name}
                   </a>
+                ) : link.path.includes('#') ? (
+                  <Link 
+                    key={link.name} 
+                    to={link.path}
+                    onClick={() => {
+                      handleLinkClick(link.path);
+                      setIsOpen(false);
+                    }}
+                    className={`nav-mobile-link ${location.pathname + location.hash === link.path ? 'active' : ''}`}
+                  >
+                    {link.name}
+                  </Link>
                 ) : (
                   <Link 
                     key={link.name} 

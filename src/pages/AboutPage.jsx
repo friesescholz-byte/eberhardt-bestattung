@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Heart, ShieldCheck, Users, Sparkles, UserRound } from 'lucide-react';
+import { Heart, ShieldCheck, Users, Sparkles, UserRound, MapPin, Phone, Clock, ArrowRight } from 'lucide-react';
 
 const teamMembers = [
   {
@@ -222,6 +222,192 @@ const AboutPage = () => {
             />
           ))}
         </motion.div>
+      </section>
+
+      {/* Standorte Section */}
+      <section className="standorte-section" id="standorte" style={{ marginTop: '120px' }}>
+        <div className="container">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={cardVariants}
+            className="standorte-header text-center"
+          >
+            <div className="section-tag" style={{ justifyContent: 'center' }}>Regionale Verbundenheit</div>
+            <h2 className="section-title text-center" style={{ textAlign: 'center' }}>
+              Unsere Standorte <br /><strong>Seit Generationen an Ihrer Seite.</strong>
+            </h2>
+            <p className="standorte-intro" style={{ margin: '20px auto 0 auto' }}>
+              Mit unseren drei Standorten in Münchehagen, Stolzenau und Petershagen (Lahde) 
+              begleiten wir Sie persönlich, einfühlsam und zuverlässig direkt vor Ort.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+            className="standorte-grid"
+          >
+            {/* Standort 1: Münchehagen */}
+            <motion.div variants={cardVariants} className="standort-card">
+              <div className="standort-card-image-wrap">
+                <img 
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Stammhaus_08.webp?v=2" 
+                  alt="Eberhardt Bestattungen Münchehagen Stammhaus" 
+                  className="standort-card-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="360"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    if (e.currentTarget.nextSibling) e.currentTarget.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="standort-image-placeholder" style={{ display: 'none' }}>
+                  <MapPin size={36} className="placeholder-icon" />
+                  <span>Filiale Münchehagen</span>
+                </div>
+                <div className="standort-year-badge">Seit 1956</div>
+              </div>
+              <div className="standort-card-body">
+                <span className="standort-subline">Stammsitz</span>
+                <h3 className="standort-name">Münchehagen</h3>
+                <p className="standort-desc">
+                  Seit über 70 Jahren unser traditionsreicher Hauptsitz in der Region Rehburg-Loccum.
+                </p>
+                <div className="standort-meta-list">
+                  <div className="standort-meta-item">
+                    <MapPin size={18} className="meta-icon" />
+                    <span>Bergmannstraße 20, 31547 Rehburg-Loccum</span>
+                  </div>
+                  <div className="standort-meta-item">
+                    <Phone size={18} className="meta-icon" />
+                    <a href="tel:050371222">05037 - 1222</a>
+                  </div>
+                  <div className="standort-meta-item">
+                    <Clock size={18} className="meta-icon" />
+                    <span>Mo. – Fr. 08.00 – 17.00 Uhr (24h erreichbar)</span>
+                  </div>
+                </div>
+                <div className="standort-actions">
+                  <a 
+                    href="https://maps.app.goo.gl/R1x2GviWgSf8o8BUA" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn-standort-link"
+                  >
+                    Route planen
+                    <ArrowRight size={16} />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Standort 2: Stolzenau */}
+            <motion.div variants={cardVariants} className="standort-card">
+              <div className="standort-card-image-wrap">
+                <img 
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Filiale%20Stolzenau_02.webp?v=2" 
+                  alt="Eberhardt Bestattungen Filiale Stolzenau" 
+                  className="standort-card-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="360"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    if (e.currentTarget.nextSibling) e.currentTarget.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="standort-image-placeholder" style={{ display: 'none' }}>
+                  <MapPin size={36} className="placeholder-icon" />
+                  <span>Filiale Stolzenau</span>
+                </div>
+                <div className="standort-year-badge">Seit 2014</div>
+              </div>
+              <div className="standort-card-body">
+                <span className="standort-subline">Zweigstelle</span>
+                <h3 className="standort-name">Stolzenau</h3>
+                <p className="standort-desc">
+                  Ihre verlässliche Anlaufstelle direkt im Zentrum von Stolzenau an der Weser.
+                </p>
+                <div className="standort-meta-list">
+                  <div className="standort-meta-item">
+                    <MapPin size={18} className="meta-icon" />
+                    <span>Lange Straße 5, 31592 Stolzenau</span>
+                  </div>
+                  <div className="standort-meta-item">
+                    <Phone size={18} className="meta-icon" />
+                    <a href="tel:057612000">05761 - 2000</a>
+                  </div>
+                  <div className="standort-meta-item">
+                    <Clock size={18} className="meta-icon" />
+                    <span>Di. 10.00 – 12.00 Uhr &amp; Do. 16.00 – 18.00 Uhr</span>
+                  </div>
+                </div>
+                <div className="standort-actions">
+                  <a 
+                    href="https://www.google.com/maps/place/Lange+Str.+5,+31592+Stolzenau/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn-standort-link"
+                  >
+                    Route planen
+                    <ArrowRight size={16} />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Standort 3: Petershagen (Lahde) */}
+            <motion.div variants={cardVariants} className="standort-card">
+              <div className="standort-card-image-wrap">
+                <div className="standort-image-placeholder">
+                  <MapPin size={38} className="placeholder-icon" />
+                  <span style={{ fontWeight: 600, letterSpacing: '0.3px' }}>Eröffnung 2026</span>
+                  <span style={{ color: 'var(--eb-text-muted-light)', fontSize: '0.85rem' }}>Bilder folgen in Kürze</span>
+                </div>
+                <div className="standort-year-badge">Seit 2026</div>
+              </div>
+              <div className="standort-card-body">
+                <span className="standort-subline">Neue Zweigstelle</span>
+                <h3 className="standort-name">Petershagen (Lahde)</h3>
+                <p className="standort-desc">
+                  Unsere neue Filiale zur persönlichen Betreuung aller Angehörigen in Petershagen und Umgebung.
+                </p>
+                <div className="standort-meta-list">
+                  <div className="standort-meta-item">
+                    <MapPin size={18} className="meta-icon" />
+                    <span>Bahnhofstraße 59, 32469 Petershagen (Lahde)</span>
+                  </div>
+                  <div className="standort-meta-item">
+                    <Phone size={18} className="meta-icon" />
+                    <a href="tel:057028398585">05702 - 839 85 85</a>
+                  </div>
+                  <div className="standort-meta-item">
+                    <Clock size={18} className="meta-icon" />
+                    <span>Dienstag 14.00 – 16.00 Uhr</span>
+                  </div>
+                </div>
+                <div className="standort-actions">
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Bahnhofstra%C3%9Fe+59+32469+Petershagen" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn-standort-link"
+                  >
+                    Route planen
+                    <ArrowRight size={16} />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       <style>{`

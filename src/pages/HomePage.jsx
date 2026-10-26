@@ -19,7 +19,8 @@ import {
   Clock,
   Briefcase,
   Monitor,
-  Music
+  Music,
+  Users
 } from 'lucide-react';
 
 // Framer Motion presets
@@ -430,23 +431,24 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 4. UNSERE STANDORTE SECTION */}
-      <section className="standorte-section section-dark-textured" id="standorte">
+      {/* 4. ÜBER DAS TEAM SECTION */}
+      <section className="team-preview-section section-dark-textured" id="team">
         <div className="container">
           <motion.div 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUp}
-            className="standorte-header text-center"
+            className="team-preview-header text-center"
           >
-            <div className="section-tag">Regionale Verbundenheit</div>
-            <h2 className="section-title">
-              Unsere Standorte <br /><strong>Seit Generationen an Ihrer Seite.</strong>
+            <div className="section-tag" style={{ justifyContent: 'center' }}>Menschen an Ihrer Seite</div>
+            <h2 className="section-title text-center">
+              Familientradition <br /><strong>Seit Generationen für Sie da.</strong>
             </h2>
-            <p className="standorte-intro">
-              Mit unseren drei Standorten in Münchehagen, Stolzenau und Petershagen (Lahde) 
-              begleiten wir Sie persönlich, einfühlsam und zuverlässig direkt vor Ort.
+            <p className="team-preview-intro">
+              Ein Bestattungshaus ist nur so stark wie die Menschen, die dahinterstehen. 
+              Als Familienunternehmen in dritter Generation stehen wir Ihnen bei jedem Schritt des Abschiednehmens 
+              mit Herz, Verlässlichkeit und langjähriger Erfahrung zur Seite.
             </p>
           </motion.div>
 
@@ -455,163 +457,110 @@ const HomePage = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
-            className="standorte-grid"
+            className="home-team-grid"
           >
-            {/* Standort 1: Münchehagen */}
-            <motion.div variants={fadeUp} className="standort-card">
-              <div className="standort-card-image-wrap">
+            {/* Frank Eberhardt */}
+            <motion.div variants={fadeUp} className="home-team-card">
+              <div className="home-team-media">
                 <img 
-                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Stammhaus_08.webp?v=2" 
-                  alt="Eberhardt Bestattungen Münchehagen Stammhaus" 
-                  className="standort-card-img"
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Mitarbeiter/Frank%20Eberhardt%20-%20Gepr%C3%BCfter%20Bestatter%20(Gesch%C3%A4ftsf%C3%BChrer)_ergebnis.webp" 
+                  alt="Frank Eberhardt - Geprüfter Bestatter" 
+                  className="home-team-img"
                   loading="lazy"
                   decoding="async"
-                  width="600"
-                  height="360"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    if (e.currentTarget.nextSibling) e.currentTarget.nextSibling.style.display = 'flex';
-                  }}
+                  width="400"
+                  height="460"
                 />
-                <div className="standort-image-placeholder" style={{ display: 'none' }}>
-                  <MapPin size={36} className="placeholder-icon" />
-                  <span>Filiale Münchehagen</span>
-                </div>
-                <div className="standort-year-badge">Seit 1956</div>
               </div>
-              <div className="standort-card-body">
-                <span className="standort-subline">Stammsitz</span>
-                <h3 className="standort-name">Münchehagen</h3>
-                <p className="standort-desc">
-                  Seit über 70 Jahren unser traditionsreicher Hauptsitz in der Region Rehburg-Loccum.
+              <div className="home-team-body">
+                <span className="home-team-role">Geschäftsführer &amp; Bestatter</span>
+                <h3 className="home-team-name">Frank Eberhardt</h3>
+                <p className="home-team-desc">
+                  Leitet das Unternehmen gemeinsam mit Andrea Lemke. Steht Ihnen bei Sterbefällen und der Vorsorge einfühlsam zur Seite.
                 </p>
-                <div className="standort-meta-list">
-                  <div className="standort-meta-item">
-                    <MapPin size={18} className="meta-icon" />
-                    <span>Bergmannstraße 20, 31547 Rehburg-Loccum</span>
-                  </div>
-                  <div className="standort-meta-item">
-                    <Phone size={18} className="meta-icon" />
-                    <a href="tel:050371222">05037 - 1222</a>
-                  </div>
-                  <div className="standort-meta-item">
-                    <Clock size={18} className="meta-icon" />
-                    <span>Mo. – Fr. 08.00 – 17.00 Uhr (24h erreichbar)</span>
-                  </div>
-                </div>
-                <div className="standort-actions">
-                  <a 
-                    href="https://maps.app.goo.gl/R1x2GviWgSf8o8BUA" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="btn-standort-link"
-                  >
-                    Route planen
-                    <ArrowRight size={16} />
-                  </a>
-                </div>
               </div>
             </motion.div>
 
-            {/* Standort 2: Stolzenau */}
-            <motion.div variants={fadeUp} className="standort-card">
-              <div className="standort-card-image-wrap">
+            {/* Oliver Eberhardt */}
+            <motion.div variants={fadeUp} className="home-team-card">
+              <div className="home-team-media">
                 <img 
-                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Filiale%20Stolzenau_02.webp?v=2" 
-                  alt="Eberhardt Bestattungen Filiale Stolzenau" 
-                  className="standort-card-img"
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Mitarbeiter/Oliver%20Eberhardt%20-%20Gepr%C3%BCfter%20Bestatter%20(2)_ergebnis.webp" 
+                  alt="Oliver Eberhardt - Geprüfter Bestatter" 
+                  className="home-team-img"
                   loading="lazy"
                   decoding="async"
-                  width="600"
-                  height="360"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    if (e.currentTarget.nextSibling) e.currentTarget.nextSibling.style.display = 'flex';
-                  }}
+                  width="400"
+                  height="460"
                 />
-                <div className="standort-image-placeholder" style={{ display: 'none' }}>
-                  <MapPin size={36} className="placeholder-icon" />
-                  <span>Filiale Stolzenau</span>
-                </div>
-                <div className="standort-year-badge">Seit 2014</div>
               </div>
-              <div className="standort-card-body">
-                <span className="standort-subline">Zweigstelle</span>
-                <h3 className="standort-name">Stolzenau</h3>
-                <p className="standort-desc">
-                  Ihre verlässliche Anlaufstelle direkt im Zentrum von Stolzenau an der Weser.
+              <div className="home-team-body">
+                <span className="home-team-role">Geprüfter Bestatter</span>
+                <h3 className="home-team-name">Oliver Eberhardt</h3>
+                <p className="home-team-desc">
+                  Begleitet Familien von der ersten Beratung bis zur Beisetzung mit moderner, offener Art durch alle wichtigen Entscheidungen.
                 </p>
-                <div className="standort-meta-list">
-                  <div className="standort-meta-item">
-                    <MapPin size={18} className="meta-icon" />
-                    <span>Lange Straße 5, 31592 Stolzenau</span>
-                  </div>
-                  <div className="standort-meta-item">
-                    <Phone size={18} className="meta-icon" />
-                    <a href="tel:057612000">05761 - 2000</a>
-                  </div>
-                  <div className="standort-meta-item">
-                    <Clock size={18} className="meta-icon" />
-                    <span>Di. 10.00 – 12.00 Uhr &amp; Do. 16.00 – 18.00 Uhr</span>
-                  </div>
-                </div>
-                <div className="standort-actions">
-                  <a 
-                    href="https://www.google.com/maps/place/Lange+Str.+5,+31592+Stolzenau/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="btn-standort-link"
-                  >
-                    Route planen
-                    <ArrowRight size={16} />
-                  </a>
-                </div>
               </div>
             </motion.div>
 
-            {/* Standort 3: Petershagen (Lahde) */}
-            <motion.div variants={fadeUp} className="standort-card">
-              <div className="standort-card-image-wrap">
-                <div className="standort-image-placeholder">
-                  <MapPin size={38} className="placeholder-icon" />
-                  <span style={{ fontWeight: 600, letterSpacing: '0.3px' }}>Eröffnung 2026</span>
-                  <span style={{ color: 'var(--eb-text-muted-light)', fontSize: '0.85rem' }}>Bilder folgen in Kürze</span>
-                </div>
-                <div className="standort-year-badge">Seit 2026</div>
+            {/* Maria Treetz */}
+            <motion.div variants={fadeUp} className="home-team-card">
+              <div className="home-team-media">
+                <img 
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Mitarbeiter/Maria%20Tretz%20-%20Bestattungsfachkraft_ergebnis.webp" 
+                  alt="Maria Treetz - Bestattungsfachkraft" 
+                  className="home-team-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="460"
+                />
               </div>
-              <div className="standort-card-body">
-                <span className="standort-subline">Neue Zweigstelle</span>
-                <h3 className="standort-name">Petershagen (Lahde)</h3>
-                <p className="standort-desc">
-                  Unsere neue Filiale zur persönlichen Betreuung aller Angehörigen in Petershagen und Umgebung.
+              <div className="home-team-body">
+                <span className="home-team-role">Bestattungsfachkraft</span>
+                <h3 className="home-team-name">Maria Treetz</h3>
+                <p className="home-team-desc">
+                  Verantwortlich für hygienische Versorgung, Trauerfeiern und vertrauensvolle Ansprechpartnerin für die Vorsorge.
                 </p>
-                <div className="standort-meta-list">
-                  <div className="standort-meta-item">
-                    <MapPin size={18} className="meta-icon" />
-                    <span>Bahnhofstraße 59, 32469 Petershagen (Lahde)</span>
-                  </div>
-                  <div className="standort-meta-item">
-                    <Phone size={18} className="meta-icon" />
-                    <a href="tel:057028398585">05702 - 839 85 85</a>
-                  </div>
-                  <div className="standort-meta-item">
-                    <Clock size={18} className="meta-icon" />
-                    <span>Dienstag 14.00 – 16.00 Uhr</span>
-                  </div>
-                </div>
-                <div className="standort-actions">
-                  <a 
-                    href="https://www.google.com/maps/search/?api=1&query=Bahnhofstra%C3%9Fe+59+32469+Petershagen" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="btn-standort-link"
-                  >
-                    Route planen
-                    <ArrowRight size={16} />
-                  </a>
-                </div>
               </div>
             </motion.div>
+
+            {/* Uwe Nicolai */}
+            <motion.div variants={fadeUp} className="home-team-card">
+              <div className="home-team-media">
+                <img 
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Uwe%20Nicolai_12.webp?v=2" 
+                  alt="Uwe Nicolai - Bestattungshelfer" 
+                  className="home-team-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="460"
+                />
+              </div>
+              <div className="home-team-body">
+                <span className="home-team-role">Bestattungshelfer</span>
+                <h3 className="home-team-name">Uwe Nicolai</h3>
+                <p className="home-team-desc">
+                  Begleitet Angehörige mit langjähriger Erfahrung, großer Ruhe und Empathie beim schweren Prozess der Abschiednahme.
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="team-preview-cta text-center"
+            style={{ marginTop: '50px' }}
+          >
+            <Link to="/ueber-uns" className="btn-secondary-outline">
+              <Users size={18} />
+              Alle 7 Teammitglieder &amp; unsere Standorte kennenlernen
+              <ArrowRight size={16} />
+            </Link>
           </motion.div>
         </div>
       </section>
