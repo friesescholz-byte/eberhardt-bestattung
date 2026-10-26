@@ -19,8 +19,7 @@ import {
   Clock,
   Briefcase,
   Monitor,
-  Music,
-  Users
+  Music
 } from 'lucide-react';
 
 // Framer Motion presets
@@ -431,139 +430,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 4. ÜBER DAS TEAM SECTION */}
-      <section className="team-preview-section section-dark-textured" id="team">
-        <div className="container">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUp}
-            className="team-preview-header text-center"
-          >
-            <div className="section-tag" style={{ justifyContent: 'center' }}>Menschen an Ihrer Seite</div>
-            <h2 className="section-title text-center">
-              Familientradition <br /><strong>Seit Generationen für Sie da.</strong>
-            </h2>
-            <p className="team-preview-intro">
-              Ein Bestattungshaus ist nur so stark wie die Menschen, die dahinterstehen. 
-              Als Familienunternehmen in dritter Generation stehen wir Ihnen bei jedem Schritt des Abschiednehmens 
-              mit Herz, Verlässlichkeit und langjähriger Erfahrung zur Seite.
-            </p>
-          </motion.div>
 
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="home-team-grid"
-          >
-            {/* Frank Eberhardt */}
-            <motion.div variants={fadeUp} className="home-team-card">
-              <div className="home-team-media">
-                <img 
-                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Mitarbeiter/Frank%20Eberhardt%20-%20Gepr%C3%BCfter%20Bestatter%20(Gesch%C3%A4ftsf%C3%BChrer)_ergebnis.webp" 
-                  alt="Frank Eberhardt - Geprüfter Bestatter" 
-                  className="home-team-img"
-                  loading="lazy"
-                  decoding="async"
-                  width="400"
-                  height="460"
-                />
-              </div>
-              <div className="home-team-body">
-                <span className="home-team-role">Geschäftsführer &amp; Bestatter</span>
-                <h3 className="home-team-name">Frank Eberhardt</h3>
-                <p className="home-team-desc">
-                  Leitet das Unternehmen gemeinsam mit Andrea Lemke. Steht Ihnen bei Sterbefällen und der Vorsorge einfühlsam zur Seite.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Oliver Eberhardt */}
-            <motion.div variants={fadeUp} className="home-team-card">
-              <div className="home-team-media">
-                <img 
-                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Mitarbeiter/Oliver%20Eberhardt%20-%20Gepr%C3%BCfter%20Bestatter%20(2)_ergebnis.webp" 
-                  alt="Oliver Eberhardt - Geprüfter Bestatter" 
-                  className="home-team-img"
-                  loading="lazy"
-                  decoding="async"
-                  width="400"
-                  height="460"
-                />
-              </div>
-              <div className="home-team-body">
-                <span className="home-team-role">Geprüfter Bestatter</span>
-                <h3 className="home-team-name">Oliver Eberhardt</h3>
-                <p className="home-team-desc">
-                  Begleitet Familien von der ersten Beratung bis zur Beisetzung mit moderner, offener Art durch alle wichtigen Entscheidungen.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Maria Treetz */}
-            <motion.div variants={fadeUp} className="home-team-card">
-              <div className="home-team-media">
-                <img 
-                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Mitarbeiter/Maria%20Tretz%20-%20Bestattungsfachkraft_ergebnis.webp" 
-                  alt="Maria Treetz - Bestattungsfachkraft" 
-                  className="home-team-img"
-                  loading="lazy"
-                  decoding="async"
-                  width="400"
-                  height="460"
-                />
-              </div>
-              <div className="home-team-body">
-                <span className="home-team-role">Bestattungsfachkraft</span>
-                <h3 className="home-team-name">Maria Treetz</h3>
-                <p className="home-team-desc">
-                  Verantwortlich für hygienische Versorgung, Trauerfeiern und vertrauensvolle Ansprechpartnerin für die Vorsorge.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Uwe Nicolai */}
-            <motion.div variants={fadeUp} className="home-team-card">
-              <div className="home-team-media">
-                <img 
-                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Uwe%20Nicolai_12.webp?v=2" 
-                  alt="Uwe Nicolai - Bestattungshelfer" 
-                  className="home-team-img"
-                  loading="lazy"
-                  decoding="async"
-                  width="400"
-                  height="460"
-                />
-              </div>
-              <div className="home-team-body">
-                <span className="home-team-role">Bestattungshelfer</span>
-                <h3 className="home-team-name">Uwe Nicolai</h3>
-                <p className="home-team-desc">
-                  Begleitet Angehörige mit langjähriger Erfahrung, großer Ruhe und Empathie beim schweren Prozess der Abschiednahme.
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="team-preview-cta text-center"
-            style={{ marginTop: '50px' }}
-          >
-            <Link to="/ueber-uns" className="btn-secondary-outline">
-              <Users size={18} />
-              Alle 7 Teammitglieder &amp; unsere Standorte kennenlernen
-              <ArrowRight size={16} />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
 
       {/* 5. BESTATTUNGSARTEN SECTION */}
       <section className="burial-section" id="bestattungen">

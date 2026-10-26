@@ -21,6 +21,15 @@ const ScrollToTop = () => {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
         return;
+      } else {
+        // Fallback for async page mounting
+        const timer = setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 150);
+        return () => clearTimeout(timer);
       }
     }
     // Otherwise scroll to the top of the page

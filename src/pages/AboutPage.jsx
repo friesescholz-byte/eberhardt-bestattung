@@ -201,31 +201,8 @@ const AboutPage = () => {
         </motion.div>
       </section>
 
-      {/* Team Grid Section */}
-      <section className="team-section container">
-        <div className="section-tag" style={{ justifyContent: 'center', marginBottom: '40px' }}>
-          Unser Team
-        </div>
-        
-        <motion.div 
-          className="team-grid"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          {teamMembers.map((member) => (
-            <TeamMemberCard 
-              key={member.name}
-              member={member}
-              cardVariants={cardVariants}
-            />
-          ))}
-        </motion.div>
-      </section>
-
       {/* Standorte Section */}
-      <section className="standorte-section" id="standorte" style={{ marginTop: '120px' }}>
+      <section className="standorte-section" id="standorte" style={{ marginTop: '90px' }}>
         <div className="container">
           <motion.div 
             initial="hidden"
@@ -410,6 +387,32 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Team Grid Section */}
+      <section className="team-section container" id="team" style={{ marginTop: '120px' }}>
+        <div className="section-tag" style={{ justifyContent: 'center', marginBottom: '30px' }}>
+          Unser Team
+        </div>
+        <h2 className="section-title text-center" style={{ textAlign: 'center', marginBottom: '50px' }}>
+          Die Menschen hinter <br /><strong>Eberhardt Bestattungen</strong>
+        </h2>
+        
+        <motion.div 
+          className="team-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          {teamMembers.map((member) => (
+            <TeamMemberCard 
+              key={member.name}
+              member={member}
+              cardVariants={cardVariants}
+            />
+          ))}
+        </motion.div>
+      </section>
+
       <style>{`
         .about-page-wrapper {
           padding-top: 180px;
@@ -417,6 +420,10 @@ const AboutPage = () => {
           background-color: var(--eb-dark-bg);
           font-family: var(--font-sans);
           color: var(--eb-text-white);
+        }
+
+        #standorte, #team {
+          scroll-margin-top: 120px;
         }
 
         .about-intro-section {
