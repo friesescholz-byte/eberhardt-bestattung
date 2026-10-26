@@ -64,6 +64,34 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Column 3: Petershagen (Lahde) */}
+          <div className="footer-col">
+            <h3 className="footer-title">Petershagen (Lahde)</h3>
+            <ul className="footer-links">
+              <li>
+                <MapPin className="footer-icon" />
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=Bahnhofstra%C3%9Fe+59+32469+Petershagen" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Bahnhofstraße 59<br />32469 Petershagen (Lahde)
+                </a>
+              </li>
+              <li>
+                <Phone className="footer-icon" />
+                <a href="tel:057028398585">05702 - 839 85 85</a>
+              </li>
+              <li>
+                <Clock className="footer-icon" />
+                <span>
+                  <strong>Öffnungszeiten:</strong><br />
+                  Di. 14.00 – 16.00 Uhr
+                </span>
+              </li>
+            </ul>
+          </div>
+
           {/* Column 3: Kontakt & Info */}
           <div className="footer-col">
             <h3 className="footer-title">Kontakt</h3>
@@ -131,8 +159,8 @@ const Footer = () => {
 
         .footer-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 40px;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 32px;
           margin-bottom: 60px;
         }
 

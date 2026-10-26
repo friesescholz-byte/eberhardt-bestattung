@@ -408,6 +408,10 @@ const KontaktPage = () => {
                   <span className="location">Stolzenau</span>
                   <span className="number">05761 - 2000</span>
                 </a>
+                <a href="tel:057028398585" className="phone-badge">
+                  <span className="location">Petershagen (Lahde)</span>
+                  <span className="number">05702 - 839 85 85</span>
+                </a>
               </div>
             </div>
 
@@ -418,15 +422,25 @@ const KontaktPage = () => {
                 <div className="standort-item">
                   <MapPin size={18} className="pin-icon" />
                   <div>
-                    <strong>Stolzenau</strong>
-                    <p>Lange Straße 5, 31592 Stolzenau</p>
+                    <strong>Rehburg-Loccum (Münchehagen)</strong>
+                    <p>Bergmannstraße 20, 31547 Rehburg-Loccum</p>
+                    <p className="opening-hours-hint">Mo. – Fr. 08.00 – 17.00 Uhr</p>
                   </div>
                 </div>
                 <div className="standort-item">
                   <MapPin size={18} className="pin-icon" />
                   <div>
-                    <strong>Rehburg-Loccum</strong>
-                    <p>Bergmannstraße 20, 31547 Rehburg-Loccum</p>
+                    <strong>Stolzenau</strong>
+                    <p>Lange Straße 5, 31592 Stolzenau</p>
+                    <p className="opening-hours-hint">Di. 10.00 – 12.00 Uhr &amp; Do. 16.00 – 18.00 Uhr</p>
+                  </div>
+                </div>
+                <div className="standort-item">
+                  <MapPin size={18} className="pin-icon" />
+                  <div>
+                    <strong>Petershagen (Lahde)</strong>
+                    <p>Bahnhofstraße 59, 32469 Petershagen (Lahde)</p>
+                    <p className="opening-hours-hint">Di. 14.00 – 16.00 Uhr</p>
                   </div>
                 </div>
               </div>

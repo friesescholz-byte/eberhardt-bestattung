@@ -242,7 +242,7 @@ a {
   padding: 140px 0 80px 0;
   box-sizing: border-box;
   background-image: linear-gradient(rgba(18, 20, 18, 0.68), rgba(18, 20, 18, 0.68)), 
-                    url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/5_h_startseite-1-8be265VEZDfuXnui.jpg');
+                    url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Startbild_09.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -287,32 +287,47 @@ a {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- BADGE --- */
+/* --- EYEBROW / BADGE --- */
 .modern-badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 8px 20px;
-  border-radius: 999px;
-  backdrop-filter: blur(10px);
-  margin-bottom: 25px;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  margin-bottom: 20px;
 }
 
 .badge-dot {
-  width: 6px;
-  height: 6px;
-  background-color: var(--eb-green);
-  border-radius: 50%;
+  display: none;
 }
 
 .badge-text {
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   color: var(--eb-green-light);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+  .modern-badge {
+    margin-bottom: 12px;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .badge-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.11em;
+    line-height: 1.4;
+  }
 }
 
 /* --- DIE NEUE HAUPTÜBERSCHRIFT --- */
@@ -1379,17 +1394,57 @@ a {
   margin-bottom: 80px;
 }
 
-/* Die helle Themen-Karte */
+/* Die helle Themen-Karte mit Bild-Header */
 .category-card {
-  padding: 50px 40px;
+  padding: 0;
   background-color: var(--eb-card-bg);
-  border-radius: 12px; /* Weichere, modernere Rundungen */
+  border-radius: 14px;
   border: 1px solid var(--eb-border);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Sanfter Drop-Shadow */
-  border-top: 4px solid var(--eb-green); /* Grüner Akzent-Strich oben */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  border-top: 4px solid var(--eb-green);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-card-media {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: rgba(22, 24, 22, 0.06);
+}
+
+.category-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.category-card:hover .category-card-img {
+  transform: scale(1.05);
+}
+
+.category-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #f7f9f2 0%, #ebf0df 100%);
+  color: var(--eb-green);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.category-card-content {
+  padding: 40px 35px 45px 35px;
+  flex: 1;
 }
 
 /* Schöner Schweb-Effekt beim Hover */
@@ -1501,11 +1556,15 @@ a {
 
   .category-grid {
     grid-template-columns: 1fr; /* Auf dem Handy untereinander */
-    gap: 20px;
+    gap: 25px;
   }
 
   .category-card {
-    padding: 30px 25px;
+    padding: 0;
+  }
+  
+  .category-card-content {
+    padding: 30px 22px;
   }
   
   .category-card:hover {
@@ -1521,16 +1580,257 @@ a {
   }
 }
 
+/* ==========================================================================
+   4. UNSERE STANDORTE SECTION
+   ========================================================================== */
+.standorte-section {
+  padding: 120px 0;
+  position: relative;
+  background-color: var(--eb-dark-bg);
+  border-top: 1px solid var(--eb-border-dark);
+}
+
+.standorte-header {
+  max-width: 800px;
+  margin: 0 auto 70px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.standorte-intro {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--eb-text-muted-light);
+  font-weight: 300;
+  margin-top: 20px;
+}
+
+.standorte-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.standort-card {
+  background-color: var(--eb-dark-card);
+  border: 1px solid var(--eb-border-dark);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.standort-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--eb-green);
+  box-shadow: 0 16px 40px rgba(133, 163, 31, 0.12);
+}
+
+.standort-card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background-color: #121412;
+  overflow: hidden;
+}
+
+.standort-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.standort-card:hover .standort-card-img {
+  transform: scale(1.05);
+}
+
+.standort-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(145deg, #1d211d 0%, #151815 100%);
+  color: var(--eb-green-light);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.standort-year-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(22, 24, 22, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--eb-green-light);
+  border: 1px solid rgba(133, 163, 31, 0.4);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.standort-card-body {
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.standort-subline {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--eb-green-light);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.standort-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--eb-text-white);
+  margin: 0 0 14px 0;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.standort-desc {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--eb-text-muted-light);
+  font-weight: 300;
+  margin: 0 0 24px 0;
+}
+
+.standort-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 30px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.standort-meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.92rem;
+  color: var(--eb-text-muted-light);
+  line-height: 1.45;
+}
+
+.standort-meta-item .meta-icon {
+  flex-shrink: 0;
+  color: var(--eb-green-light);
+  margin-top: 2px;
+}
+
+.standort-meta-item a {
+  color: var(--eb-text-white);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+.standort-meta-item a:hover {
+  color: var(--eb-green-light);
+}
+
+.standort-actions {
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.btn-standort-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--eb-green-light);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.btn-standort-link:hover {
+  color: var(--eb-green-hover);
+  gap: 12px;
+}
+
+@media (max-width: 1024px) {
+  .standorte-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .standorte-section {
+    padding: 60px 0;
+  }
+  .standort-card-body {
+    padding: 24px 20px;
+  }
+  .standort-card-image-wrap {
+    height: 200px;
+  }
+  .standort-name {
+    font-size: 1.5rem;
+  }
+  .standort-meta-list {
+    margin-bottom: 20px;
+    gap: 11px;
+    padding-top: 14px;
+  }
+  .standort-meta-item {
+    font-size: 0.88rem;
+  }
+}
 
 /* ==========================================================================
-   STYLES FROM ztS1De_bestattungsarten.html
+   5. BESTATTUNGSARTEN SECTION
    ========================================================================== */
-/* === HAUPTCONTAINER === */
+/* === HAUPTCONTAINER (BESTATTUNGSARTEN MIT FESTSTEHENDEM HINTERGRUND) === */
 .burial-section {
+  position: relative;
   width: 100%;
   margin: 0;
-  padding: 100px 0;
+  padding: 120px 0;
   box-sizing: border-box;
+  background-image: 
+    linear-gradient(
+      180deg, 
+      rgba(22, 24, 22, 1) 0%, 
+      rgba(22, 24, 22, 0.88) 12%, 
+      rgba(22, 24, 22, 0.80) 50%, 
+      rgba(22, 24, 22, 0.88) 88%, 
+      rgba(22, 24, 22, 1) 100%
+    ),
+    url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Ausstellung%20M%C3%BCnchehagen_01.webp');
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (max-width: 1024px) {
+  .burial-section {
+    background-attachment: scroll;
+    padding: 90px 0;
+  }
 }
 
 /* === HEADER === */

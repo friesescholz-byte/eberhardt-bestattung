@@ -29,6 +29,7 @@ const Navigation = () => {
     { name: 'Startseite', path: '/' },
     { name: 'Über uns', path: '/ueber-uns' },
     { name: 'Leistungen', path: '/#leistungen' },
+    { name: 'Standorte', path: '/#standorte' },
     { name: 'Bestattungsarten', path: '/#bestattungen' },
     { name: 'Vorsorge', path: '/#bestattungsvorsorge' },
     { name: 'Kontakt', path: '/kontakt' }
@@ -95,6 +96,10 @@ const Navigation = () => {
               <span className="location">Stolzenau</span>
               05761 - 2000
             </a>
+            <a href="tel:057028398585">
+              <span className="location">Petershagen (Lahde)</span>
+              05702 - 839 85 85
+            </a>
           </div>
         </div>
 
@@ -151,6 +156,9 @@ const Navigation = () => {
                   <a href="tel:057612000" className="mobile-cta-call">
                     <span>Stolzenau:</span> 05761 - 2000
                   </a>
+                  <a href="tel:057028398585" className="mobile-cta-call">
+                    <span>Petershagen (Lahde):</span> 05702 - 839 85 85
+                  </a>
                 </div>
               </div>
             </div>
@@ -165,45 +173,53 @@ const Navigation = () => {
           left: 0;
           width: 100%;
           z-index: 1000;
-          background: transparent;
+          background: linear-gradient(180deg, rgba(14, 16, 14, 0.85) 0%, rgba(14, 16, 14, 0.5) 60%, rgba(14, 16, 14, 0) 100%);
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
           transition: var(--transition-smooth);
-          padding: 20px 0;
+          padding: 18px 0 26px 0;
         }
 
         .nav-header.scrolled {
-          background: rgba(22, 24, 22, 0.95);
-          backdrop-filter: blur(12px);
-          border-bottom: 1px solid var(--eb-border-dark);
+          background: rgba(18, 20, 18, 0.96);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
           padding: 10px 0;
         }
 
         .nav-container {
-          max-width: 1300px;
+          max-width: 1360px;
           margin: 0 auto;
-          padding: 0 5%;
+          padding: 0 4%;
           display: flex;
           align-items: center;
           justify-content: space-between;
+          gap: 20px;
         }
 
         .nav-logo {
           display: flex;
           align-items: center;
+          flex-shrink: 0;
         }
 
         .logo-img {
-          height: 60px;
+          height: 54px;
           object-fit: contain;
           transition: var(--transition-smooth);
         }
 
         .nav-header.scrolled .logo-img {
-          height: 48px;
+          height: 44px;
         }
 
         .nav-links-desktop {
           display: flex;
-          gap: 32px;
+          align-items: center;
+          gap: clamp(14px, 1.8vw, 26px);
+          flex-shrink: 1;
         }
 
         @media (max-width: 1024px) {
@@ -215,16 +231,20 @@ const Navigation = () => {
         .nav-link {
           font-family: var(--font-sans);
           font-weight: 500;
-          font-size: 1rem;
+          font-size: 0.95rem;
           color: var(--eb-text-white);
-          opacity: 0.85;
+          opacity: 0.9;
           position: relative;
           padding: 8px 0;
+          white-space: nowrap;
+          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+          transition: var(--transition-fast);
         }
 
         .nav-link:hover, .nav-link.active {
           opacity: 1;
           color: var(--eb-green-light);
+          text-shadow: 0 1px 6px rgba(133, 163, 31, 0.4);
         }
 
         .nav-link::after {
@@ -244,6 +264,7 @@ const Navigation = () => {
 
         .nav-cta-desktop {
           display: inline-block;
+          flex-shrink: 0;
         }
 
         @media (max-width: 1024px) {
@@ -258,18 +279,22 @@ const Navigation = () => {
           gap: 8px;
           background-color: var(--eb-green);
           color: var(--eb-dark-bg);
-          padding: 10px 24px;
+          padding: 9px 20px;
           border-radius: 999px;
           border: none;
           font-family: var(--font-sans);
           font-weight: 600;
+          font-size: 0.92rem;
           cursor: pointer;
+          white-space: nowrap;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
           transition: var(--transition-smooth);
         }
 
         .nav-cta-btn:hover {
           background-color: var(--eb-green-light);
           transform: translateY(-2px);
+          box-shadow: 0 4px 14px rgba(133, 163, 31, 0.35);
         }
 
         .cta-icon {
@@ -283,11 +308,22 @@ const Navigation = () => {
           border: none;
           color: var(--eb-text-white);
           cursor: pointer;
+          padding: 8px;
+          min-width: 44px;
+          min-height: 44px;
+          align-items: center;
+          justify-content: center;
+          border-radius: 8px;
+          transition: background 0.2s ease;
+        }
+
+        .nav-mobile-toggle:active {
+          background: rgba(255, 255, 255, 0.1);
         }
 
         @media (max-width: 1024px) {
           .nav-mobile-toggle {
-            display: block;
+            display: flex;
           }
         }
 
@@ -297,10 +333,14 @@ const Navigation = () => {
           top: 100%;
           left: 0;
           width: 100%;
-          background: rgba(22, 24, 22, 0.98);
-          backdrop-filter: blur(16px);
-          border-bottom: 1px solid var(--eb-border-dark);
-          overflow: hidden;
+          background: rgba(18, 20, 18, 0.98);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          overflow-y: auto;
+          max-height: calc(100vh - 75px);
+          -webkit-overflow-scrolling: touch;
+          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
         }
 
         .nav-mobile-links {

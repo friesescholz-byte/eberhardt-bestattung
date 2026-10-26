@@ -22,7 +22,7 @@ const teamMembers = [
     image: "https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Mitarbeiter/Oliver%20Eberhardt%20-%20Gepr%C3%BCfter%20Bestatter%20(2)_ergebnis.webp"
   },
   {
-    name: "Maria Tretz",
+    name: "Maria Treetz",
     role: "Bestattungsfachkraft",
     bio: "Marias Hauptaufgaben liegen in den Bereichen Überführung, hygienische Versorgung und Trauerfeiern. Außerdem ist sie Ansprechpartnerin rund um das Thema Bestattungsvorsorge.",
     image: "https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Mitarbeiter/Maria%20Tretz%20-%20Bestattungsfachkraft_ergebnis.webp"
@@ -49,7 +49,7 @@ const teamMembers = [
     name: "Uwe Nicolai",
     role: "Bestattungshelfer",
     bio: "Auch Uwe ist im Bereich der Überführung Verstorbener tätig. Mit seiner langjährigen Erfahrung und seiner großen Empathie begleitet er Angehörige durch den schweren Prozess des Loslassens im Trauerhaus.",
-    image: null // Placeholder!
+    image: "https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Uwe%20Nicolai_12.webp?v=2"
   },
   {
     name: "Helga und Karl-Friedrich Eberhardt",

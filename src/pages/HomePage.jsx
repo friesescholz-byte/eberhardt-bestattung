@@ -93,6 +93,10 @@ const HomePage = () => {
                       <span className="location">Stolzenau</span>
                       05761 - 2000
                     </a>
+                    <a href="tel:057028398585">
+                      <span className="location">Petershagen (Lahde)</span>
+                      05702 - 839 85 85
+                    </a>
                   </div>
                 </div>
 
@@ -217,6 +221,10 @@ const HomePage = () => {
                       <span className="location">Stolzenau</span>
                       05761 - 2000
                     </a>
+                    <a href="tel:057028398585">
+                      <span className="location">Petershagen (Lahde)</span>
+                      05702 - 839 85 85
+                    </a>
                   </div>
                 </div>
                 <a 
@@ -261,74 +269,158 @@ const HomePage = () => {
           >
             {/* Box 1 */}
             <motion.div variants={fadeUp} className="category-card">
-              <h3 className="block-title">Organisation & Beratung</h3>
-              <ul className="service-list">
-                <li className="service-item">
-                  <div className="premium-icon"><HelpCircle size={20} /></div>
-                  <p className="service-text">Persönliche <b>Beratung</b> mit Kostentransparenz.</p>
-                </li>
-                <li className="service-item">
-                  <div className="premium-icon"><Calendar size={20} /></div>
-                  <p className="service-text">Terminabsprachen mit <b>Kirchen & Friedhöfen</b>.</p>
-                </li>
-                <li className="service-item">
-                  <div className="premium-icon"><FileText size={20} /></div>
-                  <p className="service-text"><b>Behördengänge</b> & Abmeldungen.</p>
-                </li>
-              </ul>
+              <div className="category-card-media">
+                <img 
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Kachel-Beratung_05.webp?v=2" 
+                  alt="Organisation &amp; Beratung" 
+                  className="category-card-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="480"
+                  height="300"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    if (e.currentTarget.nextSibling) e.currentTarget.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="category-placeholder" style={{ display: 'none' }}>
+                  <HelpCircle size={32} className="placeholder-icon" />
+                  <span>Organisation &amp; Beratung</span>
+                </div>
+              </div>
+              <div className="category-card-content">
+                <h3 className="block-title">Organisation &amp; Beratung</h3>
+                <ul className="service-list">
+                  <li className="service-item">
+                    <div className="premium-icon"><HelpCircle size={20} /></div>
+                    <p className="service-text">Persönliche <b>Beratung</b> mit Kostentransparenz.</p>
+                  </li>
+                  <li className="service-item">
+                    <div className="premium-icon"><Calendar size={20} /></div>
+                    <p className="service-text">Terminabsprachen mit <b>Kirchen &amp; Friedhöfen</b>.</p>
+                  </li>
+                  <li className="service-item">
+                    <div className="premium-icon"><FileText size={20} /></div>
+                    <p className="service-text"><b>Behördengänge</b> &amp; Abmeldungen.</p>
+                  </li>
+                </ul>
+              </div>
             </motion.div>
 
             {/* Box 2 */}
             <motion.div variants={fadeUp} className="category-card">
-              <h3 className="block-title">Abschiednahme & Feier</h3>
-              <ul className="service-list">
-                <li className="service-item">
-                  <div className="premium-icon"><Heart size={20} /></div>
-                  <p className="service-text">Organisation von <b>Trauerfeiern & Beisetzungen</b> deutschlandweit.</p>
-                </li>
-                <li className="service-item">
-                  <div className="premium-icon"><Clock size={20} /></div>
-                  <p className="service-text">Vermittlung von <b>Rednern, Musikern & Floristen</b>.</p>
-                </li>
-                <li className="service-item">
-                  <div className="premium-icon"><FileText size={20} /></div>
-                  <p className="service-text">Gestaltung & Druck von <b>Traueranzeigen</b>.</p>
-                </li>
-              </ul>
+              <div className="category-card-media">
+                <img 
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Kachel-Abschiednahme_04.webp?v=2" 
+                  alt="Abschiednahme &amp; Feier" 
+                  className="category-card-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="480"
+                  height="300"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    if (e.currentTarget.nextSibling) e.currentTarget.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="category-placeholder" style={{ display: 'none' }}>
+                  <Heart size={32} className="placeholder-icon" />
+                  <span>Abschiednahme &amp; Feier</span>
+                </div>
+              </div>
+              <div className="category-card-content">
+                <h3 className="block-title">Abschiednahme &amp; Feier</h3>
+                <ul className="service-list">
+                  <li className="service-item">
+                    <div className="premium-icon"><Heart size={20} /></div>
+                    <p className="service-text">Organisation von <b>Trauerfeiern &amp; Beisetzungen</b> deutschlandweit.</p>
+                  </li>
+                  <li className="service-item">
+                    <div className="premium-icon"><Clock size={20} /></div>
+                    <p className="service-text">Vermittlung von <b>Rednern, Musikern &amp; Floristen</b>.</p>
+                  </li>
+                  <li className="service-item">
+                    <div className="premium-icon"><FileText size={20} /></div>
+                    <p className="service-text">Gestaltung &amp; Druck von <b>Traueranzeigen</b>.</p>
+                  </li>
+                </ul>
+              </div>
             </motion.div>
 
             {/* Box 3 */}
             <motion.div variants={fadeUp} className="category-card">
-              <h3 className="block-title">Versorgung & Logistik</h3>
-              <ul className="service-list">
-                <li className="service-item">
-                  <div className="premium-icon"><Heart size={20} /></div>
-                  <p className="service-text">Hygienische und kosmetische <b>Versorgung</b>.</p>
-                </li>
-                <li className="service-item">
-                  <div className="premium-icon"><MapPin size={20} /></div>
-                  <p className="service-text">In- und Auslands<b>überführungen</b>.</p>
-                </li>
-                <li className="service-item">
-                  <div className="premium-icon"><Briefcase size={20} /></div>
-                  <p className="service-text">Särge, Urnen, Bestattungswäsche & <b>Zubehör</b>.</p>
-                </li>
-              </ul>
+              <div className="category-card-media">
+                <img 
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Kachel-Logostik-Versorgung_06.webp?v=2" 
+                  alt="Versorgung &amp; Logistik" 
+                  className="category-card-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="480"
+                  height="300"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    if (e.currentTarget.nextSibling) e.currentTarget.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="category-placeholder" style={{ display: 'none' }}>
+                  <Briefcase size={32} className="placeholder-icon" />
+                  <span>Versorgung &amp; Logistik</span>
+                </div>
+              </div>
+              <div className="category-card-content">
+                <h3 className="block-title">Versorgung &amp; Logistik</h3>
+                <ul className="service-list">
+                  <li className="service-item">
+                    <div className="premium-icon"><Heart size={20} /></div>
+                    <p className="service-text">Hygienische und kosmetische <b>Versorgung</b>.</p>
+                  </li>
+                  <li className="service-item">
+                    <div className="premium-icon"><MapPin size={20} /></div>
+                    <p className="service-text">In- und Auslands<b>überführungen</b>.</p>
+                  </li>
+                  <li className="service-item">
+                    <div className="premium-icon"><Briefcase size={20} /></div>
+                    <p className="service-text">Särge, Urnen, Bestattungswäsche &amp; <b>Zubehör</b>.</p>
+                  </li>
+                </ul>
+              </div>
             </motion.div>
 
             {/* Box 4 */}
             <motion.div variants={fadeUp} className="category-card">
-              <h3 className="block-title">Formalitäten & Finanzen</h3>
-              <ul className="service-list">
-                <li className="service-item">
-                  <div className="premium-icon"><FileText size={20} /></div>
-                  <p className="service-text">Unterstützung bei <b>Versicherungen</b> & Rententrägern.</p>
-                </li>
-                <li className="service-item">
-                  <div className="premium-icon"><Briefcase size={20} /></div>
-                  <p className="service-text">Antrag auf <b>Rentenvorschuss</b>.</p>
-                </li>
-              </ul>
+              <div className="category-card-media">
+                <img 
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Kachel%20Formalit%C3%A4ten_03.webp?v=2" 
+                  alt="Formalitäten &amp; Finanzen" 
+                  className="category-card-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="480"
+                  height="300"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    if (e.currentTarget.nextSibling) e.currentTarget.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="category-placeholder" style={{ display: 'none' }}>
+                  <FileText size={32} className="placeholder-icon" />
+                  <span>Formalitäten &amp; Finanzen</span>
+                </div>
+              </div>
+              <div className="category-card-content">
+                <h3 className="block-title">Formalitäten &amp; Finanzen</h3>
+                <ul className="service-list">
+                  <li className="service-item">
+                    <div className="premium-icon"><FileText size={20} /></div>
+                    <p className="service-text">Unterstützung bei <b>Versicherungen</b> &amp; Rententrägern.</p>
+                  </li>
+                  <li className="service-item">
+                    <div className="premium-icon"><Briefcase size={20} /></div>
+                    <p className="service-text">Antrag auf <b>Rentenvorschuss</b>.</p>
+                  </li>
+                </ul>
+              </div>
             </motion.div>
           </motion.div>
 
@@ -338,8 +430,194 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 4. BESTATTUNGSARTEN SECTION */}
-      <section className="burial-section section-dark-textured" id="bestattungen">
+      {/* 4. UNSERE STANDORTE SECTION */}
+      <section className="standorte-section section-dark-textured" id="standorte">
+        <div className="container">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+            className="standorte-header text-center"
+          >
+            <div className="section-tag">Regionale Verbundenheit</div>
+            <h2 className="section-title">
+              Unsere Standorte <br /><strong>Seit Generationen an Ihrer Seite.</strong>
+            </h2>
+            <p className="standorte-intro">
+              Mit unseren drei Standorten in Münchehagen, Stolzenau und Petershagen (Lahde) 
+              begleiten wir Sie persönlich, einfühlsam und zuverlässig direkt vor Ort.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="standorte-grid"
+          >
+            {/* Standort 1: Münchehagen */}
+            <motion.div variants={fadeUp} className="standort-card">
+              <div className="standort-card-image-wrap">
+                <img 
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Stammhaus_08.webp?v=2" 
+                  alt="Eberhardt Bestattungen Münchehagen Stammhaus" 
+                  className="standort-card-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="360"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    if (e.currentTarget.nextSibling) e.currentTarget.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="standort-image-placeholder" style={{ display: 'none' }}>
+                  <MapPin size={36} className="placeholder-icon" />
+                  <span>Filiale Münchehagen</span>
+                </div>
+                <div className="standort-year-badge">Seit 1956</div>
+              </div>
+              <div className="standort-card-body">
+                <span className="standort-subline">Stammsitz</span>
+                <h3 className="standort-name">Münchehagen</h3>
+                <p className="standort-desc">
+                  Seit über 70 Jahren unser traditionsreicher Hauptsitz in der Region Rehburg-Loccum.
+                </p>
+                <div className="standort-meta-list">
+                  <div className="standort-meta-item">
+                    <MapPin size={18} className="meta-icon" />
+                    <span>Bergmannstraße 20, 31547 Rehburg-Loccum</span>
+                  </div>
+                  <div className="standort-meta-item">
+                    <Phone size={18} className="meta-icon" />
+                    <a href="tel:050371222">05037 - 1222</a>
+                  </div>
+                  <div className="standort-meta-item">
+                    <Clock size={18} className="meta-icon" />
+                    <span>Mo. – Fr. 08.00 – 17.00 Uhr (24h erreichbar)</span>
+                  </div>
+                </div>
+                <div className="standort-actions">
+                  <a 
+                    href="https://maps.app.goo.gl/R1x2GviWgSf8o8BUA" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn-standort-link"
+                  >
+                    Route planen
+                    <ArrowRight size={16} />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Standort 2: Stolzenau */}
+            <motion.div variants={fadeUp} className="standort-card">
+              <div className="standort-card-image-wrap">
+                <img 
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Filiale%20Stolzenau_02.webp?v=2" 
+                  alt="Eberhardt Bestattungen Filiale Stolzenau" 
+                  className="standort-card-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="360"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    if (e.currentTarget.nextSibling) e.currentTarget.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="standort-image-placeholder" style={{ display: 'none' }}>
+                  <MapPin size={36} className="placeholder-icon" />
+                  <span>Filiale Stolzenau</span>
+                </div>
+                <div className="standort-year-badge">Seit 2014</div>
+              </div>
+              <div className="standort-card-body">
+                <span className="standort-subline">Zweigstelle</span>
+                <h3 className="standort-name">Stolzenau</h3>
+                <p className="standort-desc">
+                  Ihre verlässliche Anlaufstelle direkt im Zentrum von Stolzenau an der Weser.
+                </p>
+                <div className="standort-meta-list">
+                  <div className="standort-meta-item">
+                    <MapPin size={18} className="meta-icon" />
+                    <span>Lange Straße 5, 31592 Stolzenau</span>
+                  </div>
+                  <div className="standort-meta-item">
+                    <Phone size={18} className="meta-icon" />
+                    <a href="tel:057612000">05761 - 2000</a>
+                  </div>
+                  <div className="standort-meta-item">
+                    <Clock size={18} className="meta-icon" />
+                    <span>Di. 10.00 – 12.00 Uhr &amp; Do. 16.00 – 18.00 Uhr</span>
+                  </div>
+                </div>
+                <div className="standort-actions">
+                  <a 
+                    href="https://www.google.com/maps/place/Lange+Str.+5,+31592+Stolzenau/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn-standort-link"
+                  >
+                    Route planen
+                    <ArrowRight size={16} />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Standort 3: Petershagen (Lahde) */}
+            <motion.div variants={fadeUp} className="standort-card">
+              <div className="standort-card-image-wrap">
+                <div className="standort-image-placeholder">
+                  <MapPin size={38} className="placeholder-icon" />
+                  <span style={{ fontWeight: 600, letterSpacing: '0.3px' }}>Eröffnung 2026</span>
+                  <span style={{ color: 'var(--eb-text-muted-light)', fontSize: '0.85rem' }}>Bilder folgen in Kürze</span>
+                </div>
+                <div className="standort-year-badge">Seit 2026</div>
+              </div>
+              <div className="standort-card-body">
+                <span className="standort-subline">Neue Zweigstelle</span>
+                <h3 className="standort-name">Petershagen (Lahde)</h3>
+                <p className="standort-desc">
+                  Unsere neue Filiale zur persönlichen Betreuung aller Angehörigen in Petershagen und Umgebung.
+                </p>
+                <div className="standort-meta-list">
+                  <div className="standort-meta-item">
+                    <MapPin size={18} className="meta-icon" />
+                    <span>Bahnhofstraße 59, 32469 Petershagen (Lahde)</span>
+                  </div>
+                  <div className="standort-meta-item">
+                    <Phone size={18} className="meta-icon" />
+                    <a href="tel:057028398585">05702 - 839 85 85</a>
+                  </div>
+                  <div className="standort-meta-item">
+                    <Clock size={18} className="meta-icon" />
+                    <span>Dienstag 14.00 – 16.00 Uhr</span>
+                  </div>
+                </div>
+                <div className="standort-actions">
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Bahnhofstra%C3%9Fe+59+32469+Petershagen" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn-standort-link"
+                  >
+                    Route planen
+                    <ArrowRight size={16} />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 5. BESTATTUNGSARTEN SECTION */}
+      <section className="burial-section" id="bestattungen">
         <div className="container">
           <motion.div 
             initial="hidden"
@@ -429,6 +707,10 @@ const HomePage = () => {
                     <a href="tel:057612000">
                       <span className="location">Stolzenau</span>
                       05761 - 2000
+                    </a>
+                    <a href="tel:057028398585">
+                      <span className="location">Petershagen (Lahde)</span>
+                      05702 - 839 85 85
                     </a>
                   </div>
                 </div>
