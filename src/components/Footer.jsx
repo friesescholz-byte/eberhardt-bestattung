@@ -7,7 +7,35 @@ const Footer = () => {
     <footer className="footer-section">
       <div className="container">
         <div className="footer-grid">
-          {/* Column 1: Stolzenau */}
+          {/* Column 1: Rehburg-Loccum (Münchehagen) */}
+          <div className="footer-col">
+            <h3 className="footer-title">Rehburg-Loccum</h3>
+            <ul className="footer-links">
+              <li>
+                <MapPin className="footer-icon" />
+                <a 
+                  href="https://maps.app.goo.gl/R1x2GviWgSf8o8BUA" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Bergmannstraße 20<br />31547 Rehburg-Loccum
+                </a>
+              </li>
+              <li>
+                <Phone className="footer-icon" />
+                <a href="tel:050371222">05037 - 1222</a>
+              </li>
+              <li>
+                <Clock className="footer-icon" />
+                <span>
+                  <strong>Öffnungszeiten:</strong><br />
+                  Mo. – Fr. 08.00 – 17.00 Uhr
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 2: Stolzenau */}
           <div className="footer-col">
             <h3 className="footer-title">Stolzenau</h3>
             <ul className="footer-links">
@@ -31,34 +59,6 @@ const Footer = () => {
                   <strong>Öffnungszeiten:</strong><br />
                   Di. 10.00 – 12.00 Uhr<br />
                   Do. 16.00 – 18.00 Uhr
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 2: Rehburg-Loccum */}
-          <div className="footer-col">
-            <h3 className="footer-title">Rehburg-Loccum</h3>
-            <ul className="footer-links">
-              <li>
-                <MapPin className="footer-icon" />
-                <a 
-                  href="https://maps.app.goo.gl/R1x2GviWgSf8o8BUA" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  Bergmannstraße 20<br />31547 Rehburg-Loccum
-                </a>
-              </li>
-              <li>
-                <Phone className="footer-icon" />
-                <a href="tel:050371222">05037 - 1222</a>
-              </li>
-              <li>
-                <Clock className="footer-icon" />
-                <span>
-                  <strong>Öffnungszeiten:</strong><br />
-                  Mo. – Fr. 08.00 – 17.00 Uhr
                 </span>
               </li>
             </ul>
@@ -92,7 +92,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Kontakt & Info */}
+          {/* Column 4: Kontakt & Info */}
           <div className="footer-col">
             <h3 className="footer-title">Kontakt</h3>
             <ul className="footer-links">
@@ -113,37 +113,43 @@ const Footer = () => {
               </a>
             </div>
           </div>
-
-          {/* Column 4: Logo & Legal */}
-          <div className="footer-col footer-branding">
-            <img 
-              src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/eberhardt-logo-rgb-white-J3fS5LBOMqJVo2w7.webp" 
-              alt="Eberhardt Bestattungen" 
-              className="footer-logo"
-            />
-            <div className="footer-legal-links">
-              <Link to="/impressum" className="footer-legal-link">Impressum</Link>
-              <Link to="/datenschutz" className="footer-legal-link">Datenschutz</Link>
-              <Link to="/barrierefreiheit" className="footer-legal-link">Barrierefreiheitserklärung</Link>
-            </div>
-          </div>
         </div>
 
-        {/* Bottom copyright */}
+        {/* Bottom Bar: Logo, Legal nebeneinander & Copyright */}
         <div className="footer-bottom">
-          <p className="copyright-text">
-            &copy; 2026. Eberhardt Bestattung. Alle Rechte vorbehalten.
-          </p>
-          <p className="agency-credit">
-            Website by{' '}
-            <a 
-              href="https://scholz-friese-webdesign.de/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              Scholz-Friese-Webdesign
-            </a>
-          </p>
+          <div className="footer-bottom-brand">
+            <Link to="/" className="footer-logo-link" aria-label="Zur Startseite">
+              <img 
+                src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/eberhardt-logo-rgb-white-J3fS5LBOMqJVo2w7.webp" 
+                alt="Eberhardt Bestattungen" 
+                className="footer-bottom-logo"
+              />
+            </Link>
+            <nav className="footer-legal-inline" aria-label="Rechtliches">
+              <Link to="/impressum" className="footer-legal-link">Impressum</Link>
+              <span className="footer-sep">•</span>
+              <Link to="/datenschutz" className="footer-legal-link">Datenschutz</Link>
+              <span className="footer-sep">•</span>
+              <Link to="/barrierefreiheit" className="footer-legal-link">Barrierefreiheitserklärung</Link>
+            </nav>
+          </div>
+
+          <div className="footer-bottom-meta">
+            <span className="copyright-text">
+              &copy; 2026. Eberhardt Bestattung. Alle Rechte vorbehalten.
+            </span>
+            <span className="footer-sep">•</span>
+            <span className="agency-credit">
+              Website by{' '}
+              <a 
+                href="https://scholz-friese-webdesign.de/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Scholz-Friese-Webdesign
+              </a>
+            </span>
+          </div>
         </div>
       </div>
 
@@ -151,7 +157,7 @@ const Footer = () => {
         .footer-section {
           background-color: var(--eb-dark-bg);
           border-top: 1px solid var(--eb-border-dark);
-          padding: 80px 0 30px 0;
+          padding: 70px 0 28px 0;
           font-family: var(--font-sans);
           font-size: 0.95rem;
           color: var(--eb-text-muted-light);
@@ -159,14 +165,15 @@ const Footer = () => {
 
         .footer-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 32px;
-          margin-bottom: 60px;
+          grid-template-columns: repeat(4, 1fr);
+          gap: clamp(24px, 3vw, 40px);
+          margin-bottom: 50px;
         }
 
         @media (max-width: 1024px) {
           .footer-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 36px;
           }
         }
 
@@ -202,6 +209,8 @@ const Footer = () => {
           display: flex;
           flex-direction: column;
           gap: 20px;
+          padding: 0;
+          margin: 0;
         }
 
         .footer-links li {
@@ -253,65 +262,103 @@ const Footer = () => {
           fill: currentColor;
         }
 
-        .footer-branding {
+        /* Footer Bottom Bar */
+        .footer-bottom {
+          border-top: 1px solid var(--eb-border-dark);
+          padding-top: 28px;
           display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 25px;
+          justify-content: space-between;
+          align-items: center;
+          gap: 20px;
+          flex-wrap: wrap;
+          font-size: 0.88rem;
         }
 
-        .footer-logo {
-          height: 55px;
+        .footer-bottom-brand {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          flex-wrap: wrap;
+        }
+
+        .footer-logo-link {
+          display: inline-flex;
+          align-items: center;
+        }
+
+        .footer-bottom-logo {
+          height: 40px;
           object-fit: contain;
+          opacity: 0.9;
+          transition: opacity 0.2s ease;
         }
 
-        .footer-legal-links {
-          display: flex;
-          flex-direction: column;
+        .footer-bottom-logo:hover {
+          opacity: 1;
+        }
+
+        .footer-legal-inline {
+          display: inline-flex;
+          align-items: center;
           gap: 12px;
+          flex-wrap: wrap;
         }
 
         .footer-legal-link {
           color: var(--eb-text-muted-light);
-          font-size: 0.9rem;
-          opacity: 0.8;
+          text-decoration: none;
+          transition: color 0.2s ease;
         }
 
         .footer-legal-link:hover {
-          opacity: 1;
           color: var(--eb-green-light);
         }
 
-        /* Footer Bottom */
-        .footer-bottom {
-          border-top: 1px solid var(--eb-border-dark);
-          padding-top: 30px;
-          display: flex;
-          justify-content: space-between;
+        .footer-sep {
+          color: rgba(255, 255, 255, 0.25);
+          font-size: 0.75rem;
+          user-select: none;
+        }
+
+        .footer-bottom-meta {
+          display: inline-flex;
           align-items: center;
+          gap: 12px;
+          flex-wrap: wrap;
+          color: var(--eb-text-muted-light);
+          opacity: 0.85;
           font-size: 0.85rem;
-          opacity: 0.7;
-        }
-
-        @media (max-width: 768px) {
-          .footer-bottom {
-            flex-direction: column;
-            gap: 15px;
-            text-align: center;
-          }
-        }
-
-        .copyright-text {
-          margin: 0;
         }
 
         .agency-credit a {
-          font-weight: 600;
+          font-weight: 500;
           color: var(--eb-text-white);
+          text-decoration: none;
+          transition: color 0.2s ease;
         }
 
         .agency-credit a:hover {
           color: var(--eb-green-light);
+        }
+
+        @media (max-width: 900px) {
+          .footer-bottom {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 16px;
+          }
+          .footer-bottom-brand {
+            flex-direction: column;
+            gap: 14px;
+          }
+          .footer-bottom-meta {
+            flex-direction: column;
+            gap: 6px;
+          }
+          .footer-bottom-meta .footer-sep {
+            display: none;
+          }
         }
       `}</style>
     </footer>
