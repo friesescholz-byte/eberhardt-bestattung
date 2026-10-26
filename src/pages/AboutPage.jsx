@@ -122,8 +122,11 @@ const TeamMemberCard = ({ member, cardVariants }) => {
 };
 
 const AboutPage = () => {
-  // Preload all team images on mount
+  // Preload hero background and team images on mount
   useEffect(() => {
+    const heroBg = new Image();
+    heroBg.src = "https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/M%C3%BCnchehagen%20Beratung_07.webp?v=2";
+
     teamMembers.forEach(member => {
       if (member.image) {
         const img = new Image();
@@ -134,36 +137,42 @@ const AboutPage = () => {
 
   return (
     <div className="about-page-wrapper section-dark-textured">
-      {/* Intro Header Section */}
-      <section className="about-intro-section container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="section-tag"
-          style={{ justifyContent: 'center' }}
-        >
-          Das sind wir
-        </motion.div>
-        
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="section-title text-center"
-          style={{ textAlign: 'center' }}
-        >
-          Gemeinsam an Ihrer Seite. <strong>Persönlich &amp; Einfühlsam.</strong>
-        </motion.h1>
-        
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="about-intro-text"
-        >
-          Ein Bestattungshaus ist nur so stark wie die Menschen, die hinter ihm stehen. Als Familienunternehmen in dritter Generation stehen wir Ihnen bei jedem Schritt des Abschiednehmens mit Herz, Verlässlichkeit und langjähriger Erfahrung zur Seite. Wir fangen Sie im Trauerfall auf und begleiten Sie kompetent und respektvoll.
-        </motion.p>
+      {/* 1. HERO SECTION (DAS SIND WIR) */}
+      <section className="about-hero-section">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="modern-badge"
+            style={{ margin: '0 auto 24px auto' }}
+          >
+            <div className="badge-dot"></div>
+            <span className="badge-text">Das sind wir</span>
+          </motion.div>
+          
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="about-hero-title text-center"
+          >
+            Gemeinsam an Ihrer Seite. <br className="hide-mobile" />
+            <span className="highlight-hero">Persönlich &amp; Einfühlsam.</span>
+          </motion.h1>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="about-hero-text text-center"
+          >
+            Ein Bestattungshaus ist nur so stark wie die Menschen, die dahinterstehen. 
+            Als Familienunternehmen in dritter Generation stehen wir Ihnen bei jedem Schritt des Abschiednehmens 
+            mit Herz, Verlässlichkeit und langjähriger Erfahrung zur Seite. Wir fangen Sie im Trauerfall auf 
+            und begleiten Sie kompetent und respektvoll.
+          </motion.p>
+        </div>
       </section>
 
       {/* Core Values Section */}
@@ -415,7 +424,7 @@ const AboutPage = () => {
 
       <style>{`
         .about-page-wrapper {
-          padding-top: 180px;
+          padding-top: 0;
           padding-bottom: 120px;
           background-color: var(--eb-dark-bg);
           font-family: var(--font-sans);
@@ -426,18 +435,94 @@ const AboutPage = () => {
           scroll-margin-top: 120px;
         }
 
-        .about-intro-section {
+        /* === ABOUT HERO MIT ECHTEM HINTERGRUNDBILD === */
+        .about-hero-section {
+          position: relative;
+          width: 100%;
+          min-height: 70vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 190px 0 110px 0;
+          box-sizing: border-box;
+          background-image: linear-gradient(180deg, rgba(14, 16, 14, 0.78) 0%, rgba(18, 20, 18, 0.72) 60%, rgba(18, 20, 18, 0.98) 100%),
+                            url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/M%C3%BCnchehagen%20Beratung_07.webp?v=2');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
           text-align: center;
-          margin-bottom: 70px;
+          margin-bottom: 60px;
         }
 
-        .about-intro-text {
+        .about-hero-section::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 80vw;
+          height: 80vh;
+          background: radial-gradient(circle, rgba(133, 163, 31, 0.12) 0%, transparent 60%);
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        .about-hero-section::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 120px;
+          background: linear-gradient(to bottom, transparent, var(--eb-dark-bg));
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        .about-hero-section .container {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .about-hero-title {
+          font-family: var(--font-serif);
+          font-size: clamp(2.3rem, 4.5vw, 3.8rem);
+          font-weight: 500;
+          line-height: 1.18;
+          color: var(--eb-text-white);
+          margin-bottom: 24px;
+          text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7);
+        }
+
+        .about-hero-title .highlight-hero {
+          color: var(--eb-green-light);
+          font-weight: 600;
+          text-shadow: 0 2px 14px rgba(133, 163, 31, 0.35);
+        }
+
+        .about-hero-text {
           max-width: 850px;
-          margin: 30px auto 0 auto;
-          font-size: 1.15rem;
-          line-height: 1.8;
-          color: var(--eb-text-muted-light);
+          margin: 0 auto;
+          font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+          line-height: 1.85;
+          color: rgba(255, 255, 255, 0.9);
           font-weight: 300;
+          text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        @media (max-width: 768px) {
+          .about-hero-section {
+            padding: 140px 5% 70px 5%;
+            min-height: auto;
+            background-attachment: scroll;
+          }
+          .about-hero-title {
+            font-size: 2.1rem;
+          }
         }
 
         /* Values styling */
