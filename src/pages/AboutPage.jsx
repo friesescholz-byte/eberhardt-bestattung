@@ -352,10 +352,23 @@ const AboutPage = () => {
             {/* Standort 3: Petershagen (Lahde) */}
             <motion.div variants={cardVariants} className="standort-card">
               <div className="standort-card-image-wrap">
-                <div className="standort-image-placeholder">
-                  <MapPin size={38} className="placeholder-icon" />
-                  <span style={{ fontWeight: 600, letterSpacing: '0.3px' }}>Eröffnung 2026</span>
-                  <span style={{ color: 'var(--eb-text-muted-light)', fontSize: '0.85rem' }}>Bilder folgen in Kürze</span>
+                <img 
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Filiale%20Petershagen_Lahde_01.webp?v=1" 
+                  alt="Eberhardt Bestattungen Filiale Petershagen (Lahde)" 
+                  className="standort-card-img"
+                  style={{ objectPosition: 'center 75%' }}
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="360"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    if (e.currentTarget.nextSibling) e.currentTarget.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="standort-image-placeholder" style={{ display: 'none' }}>
+                  <MapPin size={36} className="placeholder-icon" />
+                  <span>Filiale Petershagen (Lahde)</span>
                 </div>
                 <div className="standort-year-badge">Seit 2026</div>
               </div>

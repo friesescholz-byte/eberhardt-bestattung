@@ -274,6 +274,7 @@ const HomePage = () => {
                   src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Eberhardt%20Bestattung/Eberhardt%20neu/Kachel-Beratung_05.webp?v=2" 
                   alt="Organisation &amp; Beratung" 
                   className="category-card-img"
+                  style={{ objectPosition: 'center top' }}
                   loading="lazy"
                   decoding="async"
                   width="480"
